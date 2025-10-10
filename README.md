@@ -4,12 +4,12 @@
 Hi there, I'm Trần Đình Huy! 👋
 
 ## 🚀 About Me
-I am a React Native Developer with more 3 years of experience in building high-quality and performant mobile applications. I am passionate about creating impressive user experiences and writing clean, efficient code.
+I am a React Native Developer with 5+ years of experience in building high-quality and performant mobile applications. I am passionate about creating impressive user experiences and writing clean, efficient code.
 
 ## 👨‍💻 Technical Skills
 - **Programming Languages**: JavaScript (ES6+), TypeScript
 - **Frameworks & Libraries**: React Native.
-- **State Management**: Redux, Context API.
+- **State Management**: Redux, Context API.å
 - **Testing Tools**: Jest, React Native Testing Library.
 - **Tools & Platforms**: Git, GitHub, Bitbucket, Jira.
 - **Databases**: Firebase, MongoDB, SQLite
