@@ -9,7 +9,7 @@ I am a React Native Developer with 5+ years of experience in building high-quali
 ## 👨‍💻 Technical Skills
 - **Programming Languages**: JavaScript (ES6+), TypeScript
 - **Frameworks & Libraries**: React Native.
-- **State Management**: Redux, Context API.å
+- **State Management**: Redux, Context API.
 - **Testing Tools**: Jest, React Native Testing Library.
 - **Tools & Platforms**: Git, GitHub, Bitbucket, Jira.
 - **Databases**: Firebase, MongoDB, SQLite
