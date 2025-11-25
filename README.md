@@ -15,9 +15,6 @@ I am a React Native Developer with 5+ years of experience in building high-quali
 - **Databases**: Firebase, MongoDB, SQLite
 - **Other**: RESTful APIs.
 
-## 📊 GitHub Stats
-![Your GitHub Stats](https://github-readme-stats.vercel.app/api?username=huytdps13400&show_icons=true&theme=radical)
-
 ## 📫 How to Reach Me
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-0072b1?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/đình-huy-trần-845963216/)](https://www.linkedin.com/in/đình-huy-trần-845963216/)
 [![Twitter Badge](https://img.shields.io/badge/-Twitter-00acee?style=flat-square&logo=Twitter&logoColor=white&link=https://twitter.com/TrninhHuy1)](https://twitter.com/TrninhHuy1)
