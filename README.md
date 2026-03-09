@@ -70,7 +70,7 @@ A lightweight SMS Retriever API built with React Native TurboModules (Nitro).
 
 ### 🎨 **@huymobile/react-native-iconify**  
 Iconify for React Native – 100k+ icons for both Expo & CLI.  
-[![npm version](https://img.shields.io/npm/v/@huymobile/react-native-iconify.svg)](https://www.npmjs.com/package/@huymobile/react-native-iconify)  
+[![npm version](https://img.shields.io/npm/v/@huymobile/react-native-iconify.svg)]([https://www.npmjs.com/package/@huymobile/react-native-iconify](https://www.npmjs.com/package/supabase-expo-ota-updates))  
 👉 https://www.npmjs.com/package/@huymobile/react-native-iconify
 
 ---
