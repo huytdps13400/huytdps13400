@@ -77,7 +77,7 @@ Iconify for React Native – 100k+ icons for both Expo & CLI.
 
 ### 🎨 **supabase-expo-ota-upates**  
 Self-hosted OTA updates for Expo apps powered by Supabase. Ship updates instantly without app store review.  
-[![npm version](https://img.shields.io/npm/v/@huymobile/react-native-iconify.svg)]([https://www.npmjs.com/package/@huymobile/react-native-iconify](https://www.npmjs.com/package/supabase-expo-ota-updates))  
+[![npm version](https://img.shields.io/npm/v/@huymobile/react-native-iconify.svg)]([https://www.npmjs.com/package/supabase-expo-ota-updates](https://www.npmjs.com/package/supabase-expo-ota-updates))  
 👉 https://www.npmjs.com/package/@huymobile/react-native-iconify
 
 ---
