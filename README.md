@@ -2,106 +2,114 @@
   <img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="250"/>
 </div>
 
-Hi there, I'm Trần Đình Huy! 👋  
+<h1 align="center">Hi, I'm Trần Đình Huy 👋</h1>
+<h3 align="center">React Native Developer | Mobile App Architect | Open-Source Contributor</h3>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Experience-5%2B%20Years-blue?style=flat-square" />
+  <img src="https://img.shields.io/badge/Focus-React%20Native-61DAFB?style=flat-square&logo=react" />
+  <img src="https://img.shields.io/badge/Location-Vietnam-red?style=flat-square" />
+</p>
+
+---
 
 ## 🚀 About Me
-I am a React Native Developer with 5+ years of experience in building high-quality and performant mobile applications. I am passionate about creating impressive user experiences and writing clean, efficient code.
+
+I'm a React Native Developer with **5+ years of experience** designing and shipping high-performance, production-grade mobile applications. I specialize in building scalable app architectures, integrating secure payment and authentication systems, and delivering polished user experiences across iOS and Android.
+
+I'm also an active open-source contributor, building libraries that solve real problems I've run into in production — from SSL pinning to OTA updates.
 
 ---
 
 ## 👨‍💻 Technical Skills
 
-### 🔧 Middleware
-- Redux-Thunk, Redux-Saga, Redux Toolkit, TanStack Query
+**Languages**
+`JavaScript (ES6+)` `TypeScript` `Node.js`
 
-### 🛠 Skills
-- JavaScript (ES6+), TypeScript, Node.js
+**Frameworks**
+`React Native (CLI & Expo)` `Express.js`
 
-### 🧩 Frameworks
-- React Native (CLI & Expo)
-- ExpressJS
+**State Management & Data**
+`Redux Toolkit` `Redux-Saga` `Redux-Thunk` `TanStack Query`
 
-### 📚 Libraries & Integrations
-- FCM, Analytics, Crashlytics, CodePush  
-- Maps (Google Maps / Apple Maps)  
-- React Navigation, Reanimated  
-- Expo Updates / OTA Updates
+**Libraries & Integrations**
+`React Navigation` `Reanimated` `Firebase Cloud Messaging (FCM)` `Analytics` `Crashlytics` `CodePush` `Expo Updates / OTA` `Google Maps / Apple Maps`
 
-### 🗄 Databases
-- MongoDB  
-- Firebase Firestore
+**Databases**
+`MongoDB` `Firebase Firestore`
 
-### 💳 Payment Gateways
-- Payoo  
-- VnPay  
-- ZaloPay
+**Payment Gateways**
+`Payoo` `VNPay` `ZaloPay`
 
-### 🔐 Security
-- SSL Pinning  
-- Biometrics  
-- Keychain / Keystore  
-- AntiBot  
-- AntiFraud
+**Security**
+`SSL Pinning` `Biometric Authentication` `Keychain / Keystore` `Anti-Bot` `Anti-Fraud`
 
-### 🚀 Deployment & Distribution
-- TestFlight  
-- Google Play Console  
-- AppCenter  
-- Firebase App Distribution  
-- Fastlane (CI/CD)
+**Deployment & CI/CD**
+`Fastlane` `TestFlight` `Google Play Console` `App Center` `Firebase App Distribution`
 
 ---
 
-## 📦 My Open-Source Libraries
+## 📦 Open-Source Libraries
 
-### 🔐 **react-native-ssl-manager**  
-A native module providing SSL Pinning and certificate management for React Native apps.  
-[![npm version](https://img.shields.io/npm/v/react-native-ssl-manager.svg)](https://www.npmjs.com/package/react-native-ssl-manager)  
-👉 https://www.npmjs.com/package/react-native-ssl-manager
+### 🔐 [react-native-ssl-manager](https://www.npmjs.com/package/react-native-ssl-manager)
+A native module providing SSL Pinning and certificate management for React Native apps.
 
----
-
-### 📩 **@huymobile/react-native-sms-retriever-nitro-module**  
-A lightweight SMS Retriever API built with React Native TurboModules (Nitro).  
-[![npm version](https://img.shields.io/npm/v/@huymobile/react-native-sms-retriever-nitro-module.svg)](https://www.npmjs.com/package/@huymobile/react-native-sms-retriever-nitro-module)  
-👉 https://www.npmjs.com/package/@huymobile/react-native-sms-retriever-nitro-module
+[![npm version](https://img.shields.io/npm/v/react-native-ssl-manager.svg?style=flat-square)](https://www.npmjs.com/package/react-native-ssl-manager)
 
 ---
 
-### 🎨 **@huymobile/react-native-iconify**  
-Iconify for React Native – 100k+ icons for both Expo & CLI.  
-[![npm version](https://img.shields.io/npm/v/@huymobile/react-native-iconify.svg)]([https://www.npmjs.com/package/@huymobile/react-native-iconify](https://www.npmjs.com/package/supabase-expo-ota-updates))  
-👉 https://www.npmjs.com/package/@huymobile/react-native-iconify
+### 📩 [@huymobile/react-native-sms-retriever-nitro-module](https://www.npmjs.com/package/@huymobile/react-native-sms-retriever-nitro-module)
+A lightweight SMS Retriever API built with React Native TurboModules (Nitro).
+
+[![npm version](https://img.shields.io/npm/v/@huymobile/react-native-sms-retriever-nitro-module.svg?style=flat-square)](https://www.npmjs.com/package/@huymobile/react-native-sms-retriever-nitro-module)
 
 ---
 
-### 🎨 **supabase-expo-ota-upates**  
-Self-hosted OTA updates for Expo apps powered by Supabase. Ship updates instantly without app store review.  
-[![npm version](https://img.shields.io/npm/v/@huymobile/react-native-iconify.svg)]([https://www.npmjs.com/package/supabase-expo-ota-updates](https://www.npmjs.com/package/supabase-expo-ota-updates))  
-👉 https://www.npmjs.com/package/supabase-expo-ota-updates
+### 🎨 [@huymobile/react-native-iconify](https://www.npmjs.com/package/@huymobile/react-native-iconify)
+Iconify for React Native — access to 100k+ icons, supporting both Expo and CLI workflows.
+
+[![npm version](https://img.shields.io/npm/v/@huymobile/react-native-iconify.svg?style=flat-square)](https://www.npmjs.com/package/@huymobile/react-native-iconify)
 
 ---
 
-## ⭐ GitHub Profile Highlights
+### ☁️ [supabase-expo-ota-updates](https://www.npmjs.com/package/supabase-expo-ota-updates)
+Self-hosted OTA updates for Expo apps, powered by Supabase. Ship updates instantly without waiting on app store review.
 
-[![GitHub Stars](https://img.shields.io/github/stars/huytdps13400?affiliations=OWNER&style=social)](https://github.com/huytdps13400?tab=repositories)
-[![GitHub Followers](https://img.shields.io/github/followers/huytdps13400?style=social)](https://github.com/huytdps13400?tab=followers)
-
----
-
-## 📊 GitHub Stats (Working Mirrors)
-
-### GitHub Stats
-![Huy's GitHub Stats](https://github-readme-stats-git-master-huytdps13400-projects.vercel.app/api?username=huytdps13400&show_icons=true&count_private=true&include_all_commits=true)
-
-### Top Languages
-![Top Langs](https://github-readme-stats-git-master-huytdps13400-projects.vercel.app/api/top-langs/?username=huytdps13400&layout=compact)
-
-### GitHub Streak
-![GitHub Streak](https://streak-stats.hoy.im?user=huytdps13400)
+[![npm version](https://img.shields.io/npm/v/supabase-expo-ota-updates.svg?style=flat-square)](https://www.npmjs.com/package/supabase-expo-ota-updates)
 
 ---
 
-## 📫 How to Reach Me
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-0072b1?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/đình-huy-trần-845963216/)  
-[![Twitter Badge](https://img.shields.io/badge/-Twitter-00acee?style=flat-square&logo=Twitter&logoColor=white)](https://twitter.com/TrninhHuy1)
+## ⭐ GitHub Highlights
+
+<p align="center">
+  <a href="https://github.com/huytdps13400?tab=repositories">
+    <img src="https://img.shields.io/github/stars/huytdps13400?affiliations=OWNER&style=social" />
+  </a>
+  <a href="https://github.com/huytdps13400?tab=followers">
+    <img src="https://img.shields.io/github/followers/huytdps13400?style=social" />
+  </a>
+</p>
+
+## 📊 GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats-git-master-huytdps13400-projects.vercel.app/api?username=huytdps13400&show_icons=true&count_private=true&include_all_commits=true" width="48%" />
+  <img src="https://github-readme-stats-git-master-huytdps13400-projects.vercel.app/api/top-langs/?username=huytdps13400&layout=compact" width="48%" />
+</p>
+
+<p align="center">
+  <img src="https://streak-stats.hoy.im?user=huytdps13400" />
+</p>
+
+---
+
+## 📫 Let's Connect
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/%C4%91%C3%ACnh-huy-tr%E1%BA%A7n-845963216/">
+    <img src="https://img.shields.io/badge/-LinkedIn-0072b1?style=flat-square&logo=Linkedin&logoColor=white" />
+  </a>
+  <a href="https://twitter.com/TrninhHuy1">
+    <img src="https://img.shields.io/badge/-Twitter-00acee?style=flat-square&logo=Twitter&logoColor=white" />
+  </a>
+</p>
