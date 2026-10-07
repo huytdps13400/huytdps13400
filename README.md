@@ -5,9 +5,9 @@
 </a>
 
 <p align="center">
-  <a href="https://x.com/TrninhHuy1"><img src="./assets/btn-x.svg" height="44" alt="Follow on X" /></a>&nbsp;
-  <a href="https://www.linkedin.com/in/%C4%91%C3%ACnh-huy-tr%E1%BA%A7n-845963216/"><img src="./assets/btn-linkedin.svg" height="44" alt="LinkedIn" /></a>&nbsp;
-  <a href="https://www.npmjs.com/~huymobile"><img src="./assets/btn-npm.svg" height="44" alt="npm packages" /></a>
+  <a href="https://x.com/TrninhHuy1"><img src="./assets/btn-x.svg" height="40" alt="Follow on X" /></a>&nbsp;
+  <a href="https://www.linkedin.com/in/%C4%91%C3%ACnh-huy-tr%E1%BA%A7n-845963216/"><img src="./assets/btn-linkedin.svg" height="40" alt="LinkedIn" /></a>&nbsp;
+  <a href="https://www.npmjs.com/~huymobile"><img src="./assets/btn-npm.svg" height="40" alt="npm packages" /></a>
 </p>
 
 <br />
@@ -24,10 +24,8 @@
 </a>
 
 <p align="center">
-  <a href="https://github.com/huytdps13400/react-native-iconify"><img src="./assets/lib-iconify.svg" width="49%" alt="react-native-iconify — 200,000+ icons with native caching" /></a>
-  <a href="https://github.com/huytdps13400/react-native-sms-retriever-nitro-module"><img src="./assets/lib-sms-retriever.svg" width="49%" alt="sms-retriever-nitro-module — OTP autofill on Android without SMS permissions" /></a>
-  <a href="https://github.com/huytdps13400/supabase-expo-ota-upates"><img src="./assets/lib-ota-updates.svg" width="49%" alt="supabase-expo-ota-updates — self-hosted OTA updates for Expo on Supabase" /></a>
-  <a href="https://www.npmjs.com/~huymobile"><img src="./assets/lib-more.svg" width="49%" alt="More packages on npm" /></a>
+  <a href="https://github.com/huytdps13400/react-native-iconify"><img src="./assets/lib-iconify.svg" width="49.5%" alt="react-native-iconify — 200,000+ icons with native caching" /></a><a href="https://github.com/huytdps13400/react-native-sms-retriever-nitro-module"><img src="./assets/lib-sms-retriever.svg" width="49.5%" alt="sms-retriever-nitro-module — OTP autofill on Android without SMS permissions" /></a>
+  <a href="https://github.com/huytdps13400/supabase-expo-ota-upates"><img src="./assets/lib-ota-updates.svg" width="49.5%" alt="supabase-expo-ota-updates — self-hosted OTA updates for Expo on Supabase" /></a><a href="https://www.npmjs.com/~huymobile"><img src="./assets/lib-more.svg" width="49.5%" alt="More packages on npm" /></a>
 </p>
 
 <p align="center">

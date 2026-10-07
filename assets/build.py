@@ -33,7 +33,7 @@ BLURPLE, LAVENDER, CYAN, MAGENTA, ORANGE, GREEN = (
 CODE = {  # syntax colours on DEEP
     "p": "#C9D6E3", "tag": "#7FD3FF", "attr": LAVENDER, "str": "#FFD58A",
     "num": "#FF9E7A", "kw": "#F98BE3", "fn": "#7FD3FF", "prompt": GREEN,
-    "cmd": WHITE, "flag": LAVENDER, "com": "#5E7A99", "key": "#7FD3FF",
+    "cmd": WHITE, "flag": LAVENDER, "com": "#7891AD", "key": "#7FD3FF",
 }
 
 # Feather-style line icons on a 24px grid.
@@ -205,15 +205,15 @@ def mesh(clip_id):
 
 # ── Hero ─────────────────────────────────────────────────────────────────────
 def hero():
-    W, H, L = 1200, 600, 72
-    px, py, pw, ph = 820, 36, 272, 548          # phone body
+    W, H, L = 1200, 612, 66
+    px, py, pw, ph = 820, 26, 272, 548          # phone body
     sx, sy, sw, sh = px + 10, py + 10, 252, 528  # screen
     cx, cy = sx + 24, sy + 124                   # credit card
     bx, by = sx + 24, sy + 440                   # pay button
 
     defs = (BLUR + SHADOW + GRID + GRAIN
-            + '<clipPath id="card"><rect x="12" y="0" width="1176" height="600" rx="28"/></clipPath>'
-            + '<clipPath id="band"><polygon points="12,0 1188,0 1188,300 12,130"/></clipPath>'
+            + '<clipPath id="card"><rect x="18" y="0" width="1164" height="600" rx="28"/></clipPath>'
+            + '<clipPath id="band"><polygon points="18,0 1182,0 1182,300 18,130"/></clipPath>'
             + f'<clipPath id="screen"><rect x="{sx}" y="{sy}" width="{sw}" height="{sh}" rx="37"/></clipPath>'
             + f'<clipPath id="btn"><rect x="{bx}" y="{by}" width="204" height="50" rx="12"/></clipPath>'
             + f'<clipPath id="ccard"><rect x="{cx}" y="{cy}" width="204" height="128" rx="14"/></clipPath>'
@@ -242,7 +242,7 @@ def hero():
         if i:
             stat_svg += f'<line x1="{x - 28}" y1="480" x2="{x - 28}" y2="550" stroke="{LINE}" stroke-width="1.5"/>'
         stat_svg += text(x, 516, n, 38, WHITE, 700, spacing=-0.5)
-        stat_svg += text(x, 543, lbl, 13, SUBTLE, 700, spacing=1.3, maxw=166)
+        stat_svg += text(x, 543, lbl, 14, "#8FA3B8", 700, spacing=1.1, maxw=170)
 
     eyebrow = "React Native  ·  iOS  ·  Android"
     pill_w = round(54 + tw(eyebrow, 15, 600))
@@ -260,8 +260,8 @@ def hero():
 
     body = f"""
 <g clip-path="url(#card)">
-  <rect x="12" width="1176" height="600" fill="{NAVY}"/>
-  <rect x="12" width="1176" height="600" fill="url(#grid)" opacity=".5"/>
+  <rect x="18" width="1164" height="600" fill="{NAVY}"/>
+  <rect x="18" width="1164" height="600" fill="url(#grid)" opacity=".5"/>
   {mesh("band")}
   <ellipse cx="960" cy="560" rx="320" ry="160" fill="url(#pglow)"/>
 
@@ -330,15 +330,15 @@ def hero():
     {text(632, 217, "Rolled out to 50% · no review", 12, UI_MUTED, 500, maxw=186)}
   </g>
   <g class="float3">
-    <g filter="url(#shadow)"><rect x="978" y="86" width="196" height="68" rx="16" fill="#FFFFFF"/></g>
-    <rect x="978.5" y="86.5" width="195" height="67" rx="15.5" stroke="{INK}" stroke-opacity=".06"/>
-    <circle cx="1014" cy="120" r="18" fill="url(#cc)"/>
-    {icon("message", 1004, 110, 20, WHITE, 2.4)}
-    {text(1044, 115, "OTP auto-filled", 14, INK, 700, maxw=120)}
-    {text(1044, 135, "No SMS permission", 12, UI_MUTED, 500, maxw=120)}
+    <g filter="url(#shadow)"><rect x="978" y="72" width="192" height="68" rx="16" fill="#FFFFFF"/></g>
+    <rect x="978.5" y="72.5" width="191" height="67" rx="15.5" stroke="{INK}" stroke-opacity=".06"/>
+    <circle cx="1014" cy="106" r="18" fill="url(#cc)"/>
+    {icon("message", 1004, 96, 20, WHITE, 2.4)}
+    {text(1044, 101, "OTP auto-filled", 14, INK, 700, maxw=116)}
+    {text(1044, 121, "No SMS permission", 12, UI_MUTED, 500, maxw=116)}
   </g>
 </g>
-<rect x="12.5" y=".5" width="1175" height="599" rx="27.5" stroke="#FFFFFF" stroke-opacity=".08"/>"""
+<rect x="18.5" y=".5" width="1163" height="599" rx="27.5" stroke="#FFFFFF" stroke-opacity=".08"/>"""
     write("hero.svg", W, H,
           "Trần Đình Huy — Senior React Native Engineer. I build secure, production-grade mobile apps "
           "and open-source the infrastructure behind them.", body, defs, css)
@@ -361,9 +361,9 @@ def button(name, label, mark, primary=False):
 def header(name, eyebrow, title, sub):
     css = (f".h{{fill:{INK}}}.s{{fill:{INK_MUTED}}}"
            f"@media (prefers-color-scheme: dark){{.h{{fill:#F6F9FC}}.s{{fill:{MUTED}}}}}")
-    body = (text(12, 38, eyebrow, 15, "url(#eb)", 800, spacing=2.4)
-            + text(10, 98, title, 46, "", 700, cls="h", spacing=-1.4, maxw=1170)
-            + text(12, 140, sub, 20, "", 400, cls="s", maxw=1170))
+    body = (text(18, 38, eyebrow, 15, "url(#eb)", 800, spacing=2.4)
+            + text(16, 98, title, 46, "", 700, cls="h", spacing=-1.4, maxw=1164)
+            + text(18, 140, sub, 20, "", 400, cls="s", maxw=1164))
     write(name, 1200, 160, f"{title} {sub}", body, lin("eb", BLURPLE, "#00B8E6"), css)
 
 
@@ -385,11 +385,11 @@ EXPERTISE = [
 
 
 def expertise():
-    tw_, th, gap = 576, 298, 24
+    tw_, th, gap = 570, 298, 24
     W, H = 1200, th * 2 + gap
     defs, body = "", ""
     for i, (ic, title, a, b, desc, chips) in enumerate(EXPERTISE):
-        x = 12 + (i % 2) * (tw_ + gap)
+        x = 18 + (i % 2) * (tw_ + gap)
         y = (i // 2) * (th + gap)
         inner = x + tw_ - 36
         defs += (lin(f"g{i}", a, b, x2=1, y2=1) + glow(f"r{i}", a, .32)
@@ -418,8 +418,8 @@ def expertise():
 
 # ── Library cards ────────────────────────────────────────────────────────────
 def flagship():
-    W, H, L = 1200, 476, 60
-    wx, wy, ww, wh = 612, 44, 528, 392  # code window
+    W, H, L = 1200, 492, 66
+    wx, wy, ww, wh = 606, 44, 528, 392  # code window
     defs = glow("ga", BLURPLE, .40) + glow("gb", CYAN, .22) + lin("ok", GREEN, CYAN, x2=1, y2=1)
     css = """
 .ln{animation:in .6s ease-out both}
@@ -457,9 +457,9 @@ def flagship():
     eyebrow = "FLAGSHIP · SECURITY"
 
     body = f"""
-{card_frame(12, 0, 1176, 464, 26, '<circle cx="60" cy="0" r="480" fill="url(#ga)"/><circle cx="1188" cy="464" r="440" fill="url(#gb)"/>')}
-<rect x="{L}" y="44" width="{round(tw(eyebrow, 13, 700, 1.6) + 32)}" height="32" rx="16" fill="{BLURPLE}" fill-opacity=".2" stroke="{BLURPLE}" stroke-opacity=".55"/>
-{text(L + 16, 65, eyebrow, 13, LAVENDER, 700, spacing=1.6)}
+{card_frame(18, 0, 1164, 480, 26, '<circle cx="66" cy="0" r="480" fill="url(#ga)"/><circle cx="1182" cy="480" r="440" fill="url(#gb)"/>')}
+<rect x="{L}" y="44" width="{round(tw(eyebrow, 14, 700, 1.6) + 32)}" height="32" rx="16" fill="{BLURPLE}" fill-opacity=".2" stroke="{BLURPLE}" stroke-opacity=".55"/>
+{text(L + 16, 65, eyebrow, 14, LAVENDER, 700, spacing=1.6)}
 {text(L - 2, 142, "react-native-ssl-manager", 40, WHITE, 700, spacing=-1.2, maxw=wx - L - 30)}
 {text(L, 188, "Certificate pinning for React Native & Expo. Your", 19, MUTED, maxw=wx - L - 40)}
 {text(L, 217, "app refuses every connection that doesn't match —", 19, MUTED, maxw=wx - L - 40)}
@@ -485,7 +485,7 @@ def art_icons():
     items = [("star", ORANGE), ("heart", MAGENTA), ("zap", CYAN), ("camera", GREEN), ("music", LAVENDER)]
     out = ""
     for i, (ic, c) in enumerate(items):
-        x = 312 + i * 52
+        x = 300 + i * 52
         out += (f'<g class="pop" style="animation-delay:{i * .18:.2f}s">'
                 f'<rect x="{x}" y="42" width="44" height="44" rx="12" fill="#FFFFFF" fill-opacity=".06" stroke="#FFFFFF" stroke-opacity=".12"/>'
                 + icon(ic, x + 11, 53, 22, c, 2) + "</g>")
@@ -495,18 +495,18 @@ def art_icons():
 def art_otp():
     out = ""
     for i, d in enumerate("482916"):
-        x = 308 + i * 44
+        x = 296 + i * 44
         out += (f'<rect x="{x}" y="40" width="36" height="48" rx="10" fill="#FFFFFF" fill-opacity=".06" stroke="#FFFFFF" stroke-opacity=".14"/>'
                 f'<rect class="hl" x="{x}" y="40" width="36" height="48" rx="10" stroke="{GREEN}" stroke-width="1.5" style="animation-delay:{i * .15:.2f}s"/>'
                 + text(x + 18, 72, d, 22, WHITE, 700, anchor="middle", extra=f'class="dg" style="animation-delay:{i * .15:.2f}s"'))
-    css = (".dg,.hl{animation:dg 6s ease-out infinite}"
+    css = (".dg,.hl{animation:dg 6s ease-out infinite both}"
            "@keyframes dg{0%,6%{opacity:0}12%,86%{opacity:1}94%,100%{opacity:0}}"
            ".hl{animation-name:hl}@keyframes hl{0%,6%{opacity:0}10%{opacity:1}22%,100%{opacity:0}}")
     return out, css
 
 
 def art_rollout():
-    x, y, w = 300, 39, 264
+    x, y, w = 288, 39, 264
     out = (f'<rect x="{x}" y="{y}" width="{w}" height="50" rx="12" fill="#FFFFFF" fill-opacity=".06" stroke="#FFFFFF" stroke-opacity=".12"/>'
            f'<circle cx="{x + 20}" cy="{y + 19}" r="4" fill="{GREEN}"/>'
            + text(x + 32, y + 24, "v2.4.1", 14, WHITE, 600, cls="mono")
@@ -522,7 +522,7 @@ def art_packages():
     items = [("SSL", BLURPLE), ("ICN", MAGENTA), ("SMS", GREEN), ("OTA", CYAN), ("+1", "#2A4466")]
     out = ""
     for i, (lbl, c) in enumerate(items):
-        x = 382 + i * 40
+        x = 370 + i * 40
         out += (f'<circle cx="{x}" cy="64" r="22" fill="{c}" stroke="{NAVY}" stroke-width="3"/>'
                 + text(x, 68, lbl, 11, WHITE, 800, anchor="middle", spacing=.4))
     return out, ""
@@ -547,20 +547,20 @@ LIBS = [
 
 
 def lib_card(fname, ic, a, b, eye_c, eyebrow, title, desc, code, art):
-    W, ch, H = 600, 352, 376
+    W, ch, H = 600, 360, 376
     art_svg, art_css = art()
     defs = lin("g", a, b, x2=1, y2=1) + lin("bar", GREEN, CYAN) + glow("r", a, .34)
     body = f"""
-{card_frame(0, 0, W, ch, 22, f'<circle cx="{W - 20}" cy="0" r="340" fill="url(#r)"/>')}
-<rect x="36" y="36" width="56" height="56" rx="15" fill="url(#g)"/>
-{icon(ic, 50, 50, 28, WHITE, 2.1)}
+{card_frame(12, 0, 576, ch, 22, f'<circle cx="{W - 32}" cy="0" r="340" fill="url(#r)"/>')}
+<rect x="48" y="36" width="56" height="56" rx="15" fill="url(#g)"/>
+{icon(ic, 62, 50, 28, WHITE, 2.1)}
 {art_svg}
-{text(36, 140, eyebrow, 13, eye_c, 700, spacing=1.6, maxw=528)}
-{text(35, 180, title, 30, WHITE, 700, spacing=-0.7, maxw=528)}
-{text(36, 218, desc[0], 19, MUTED, maxw=528)}
-{text(36, 246, desc[1], 19, MUTED, maxw=528)}
-<rect x="36" y="272" width="528" height="52" rx="12" fill="{DEEP}" stroke="{LINE}"/>
-{code_line(56, 304, code, 15, maxw=488)}"""
+{text(48, 140, eyebrow, 14, eye_c, 700, spacing=1.5, maxw=504)}
+{text(47, 180, title, 30, WHITE, 700, spacing=-0.7, maxw=504)}
+{text(48, 218, desc[0], 19, MUTED, maxw=504)}
+{text(48, 246, desc[1], 19, MUTED, maxw=504)}
+<rect x="48" y="272" width="504" height="52" rx="12" fill="{DEEP}" stroke="{LINE}"/>
+{code_line(68, 304, code, 14.5, maxw=464)}"""
     write(fname, W, H, f"{title} — {' '.join(desc)}", body, defs, art_css)
 
 
@@ -569,14 +569,14 @@ def x_card():
     W, H = 1200, 272
     label = "Follow on X"
     bw = round(32 + 20 + 12 + tw(label, 18, 700) + 14 + 18 + 28)
-    bx = 1140 - bw
+    bx = 1134 - bw
     body = f"""
-{card_frame(12, 0, 1176, 260, 26, '<circle cx="1060" cy="40" r="360" fill="url(#gb)"/><circle cx="760" cy="300" r="300" fill="url(#ga)"/>')}
-<circle cx="116" cy="130" r="56" fill="#000000" stroke="#FFFFFF" stroke-opacity=".18" stroke-width="1.5"/>
-{brand("x", 94, 108, 44)}
-{text(204, 114, "@TrninhHuy1", 40, WHITE, 700, spacing=-1.2)}
-{text(206, 153, "React Native deep-dives, library launches and lessons", 19, MUTED, maxw=bx - 236)}
-{text(206, 181, "from shipping secure mobile apps to production.", 19, MUTED, maxw=bx - 236)}
+{card_frame(18, 0, 1164, 260, 26, '<circle cx="1060" cy="40" r="360" fill="url(#gb)"/><circle cx="760" cy="300" r="300" fill="url(#ga)"/>')}
+<circle cx="122" cy="130" r="56" fill="#000000" stroke="#FFFFFF" stroke-opacity=".18" stroke-width="1.5"/>
+{brand("x", 100, 108, 44)}
+{text(210, 114, "@TrninhHuy1", 40, WHITE, 700, spacing=-1.2)}
+{text(212, 153, "React Native deep-dives, library launches and lessons", 19, MUTED, maxw=bx - 236)}
+{text(212, 181, "from shipping secure mobile apps to production.", 19, MUTED, maxw=bx - 236)}
 <rect x="{bx}" y="102" width="{bw}" height="56" rx="28" fill="#FFFFFF"/>
 {brand("x", bx + 32, 120, 20, INK)}
 {text(bx + 64, 137, label, 18, INK, 700)}
@@ -588,25 +588,32 @@ def x_card():
 # ── Footer ───────────────────────────────────────────────────────────────────
 def footer():
     W, H = 1200, 300
+    label = "Say hello on X"
+    bw = round(32 + 20 + 12 + tw(label, 18, 700) + 14 + 18 + 28)
+    bx = 1134 - bw
     defs = (BLUR + GRID + GRAIN + lin("eb", "#C3BEFF", "#80E9FF")
-            + '<clipPath id="card"><rect x="12" width="1176" height="288" rx="28"/></clipPath>'
+            + '<clipPath id="card"><rect x="18" width="1164" height="288" rx="28"/></clipPath>'
             # band clip lives in the mesh's translated space (+120px)
-            + '<clipPath id="band2"><polygon points="12,168 1188,168 1188,30 12,130"/></clipPath>')
+            + '<clipPath id="band2"><polygon points="18,168 1182,168 1182,30 18,130"/></clipPath>')
     body = f"""
 <g clip-path="url(#card)">
-  <rect x="12" width="1176" height="288" fill="{NAVY}"/>
+  <rect x="18" width="1164" height="288" fill="{NAVY}"/>
   <g transform="translate(0 120)">{mesh("band2")}</g>
 </g>
-<rect x="12.5" y=".5" width="1175" height="287" rx="27.5" stroke="#FFFFFF" stroke-opacity=".08"/>
-{text(60, 64, "LET'S TALK", 15, "url(#eb)", 800, spacing=2.4)}
-{text(58, 118, "Let's build something people trust.", 46, WHITE, 700, spacing=-1.4, maxw=1080)}
-{text(60, 158, "Open to senior React Native roles, consulting and open-source collaboration.", 20, MUTED, maxw=820)}"""
+<rect x="18.5" y=".5" width="1163" height="287" rx="27.5" stroke="#FFFFFF" stroke-opacity=".08"/>
+{text(66, 64, "LET'S TALK", 15, "url(#eb)", 800, spacing=2.4)}
+{text(64, 118, "Let's build something people trust.", 46, WHITE, 700, spacing=-1.4, maxw=bx - 100)}
+{text(66, 158, "Open to senior React Native roles, consulting and open-source collaboration.", 20, MUTED, maxw=1068)}
+<rect x="{bx}" y="72" width="{bw}" height="56" rx="28" fill="#FFFFFF"/>
+{brand("x", bx + 32, 90, 20, INK)}
+{text(bx + 64, 107, label, 18, INK, 700)}
+{icon("arrow-up-right", round(bx + 64 + tw(label, 18, 700) + 14), 91, 18, INK, 2.6)}"""
     write("footer.svg", W, H, "Let's build something people trust. Open to senior React Native roles, "
           "consulting and open-source collaboration.", body, defs, MESH_CSS)
 
 
 # ── Activity (refreshed daily by .github/workflows/activity.yml) ─────────────
-LEVELS = ["#FFFFFF", "#2E3A8C", "#4B4FE0", "#7C7CFF", CYAN]
+LEVELS = ["#FFFFFF", "#3B40B8", "#4B4FE0", "#7C7CFF", CYAN]
 
 
 def _streaks(days):
@@ -646,12 +653,12 @@ def activity():
         q = [nonzero[int(len(nonzero) * p)] for p in (.25, .5, .75)]
         return 1 + sum(c > t for t in q)
 
-    W, H, L = 1200, 412, 60
+    W, H, L = 1200, 412, 66
     first = date.fromisoformat(days[0][0])
     offset = (first.weekday() + 1) % 7  # GitHub weeks start on Sunday
     weeks = (offset + len(days) + 6) // 7
-    gx, gy = 104, 206
-    pitch = round((1140 - gx + 4) / weeks, 2)
+    gx, gy = 110, 206
+    pitch = round((1134 - gx + 4) / weeks, 2)
     cell = round(pitch - 4, 2)
 
     stats = [
@@ -664,7 +671,7 @@ def activity():
     for i, (n, unit, lbl) in enumerate(stats):
         x = L + i * 270
         if i:
-            stat_svg += f'<line x1="{x - 30}" y1="54" x2="{x - 30}" y2="130" stroke="{LINE}" stroke-width="1.5"/>'
+            stat_svg += f'<line x1="{x - 30}" y1="68" x2="{x - 30}" y2="136" stroke="{LINE}" stroke-width="1.5"/>'
         stat_svg += (f'<text x="{x}" y="102" font-size="42" font-weight="700" fill="{WHITE}" letter-spacing="-1">{escape(n)}'
                      f'<tspan font-size="20" font-weight="600" fill="{MUTED}" letter-spacing="0">{escape(unit)}</tspan></text>'
                      + text(x, 130, lbl, 15, MUTED, 500, maxw=236))
@@ -680,23 +687,23 @@ def activity():
         m = d[:7]
         if row == 0 or i == 0:
             if m != last_month and col < weeks - 2:
-                months += text(round(x, 1), gy - 14, f"{date.fromisoformat(d):%b}", 13, SUBTLE, 600)
+                months += text(round(x, 1), gy - 14, f"{date.fromisoformat(d):%b}", 14, "#8FA3B8", 600)
             last_month = m
-    days_lbl = "".join(text(L, gy + r * pitch + cell - 3, n, 12, SUBTLE, 600) for r, n in ((1, "Mon"), (3, "Wed"), (5, "Fri")))
+    days_lbl = "".join(text(L, gy + r * pitch + cell - 3, n, 14, "#8FA3B8", 600) for r, n in ((1, "Mon"), (3, "Wed"), (5, "Fri")))
 
-    legend_x = 1140 - round(tw("More", 13, 600)) - 10 - 5 * (cell + 4) + 4
+    legend_x = 1134 - round(tw("More", 13, 600)) - 10 - 5 * (cell + 4) + 4
     legend = text(legend_x - 10, 372, "Less", 13, SUBTLE, 600, anchor="end")
     for i, c in enumerate(LEVELS):
         op = ' fill-opacity=".06"' if i == 0 else ""
         legend += f'<rect x="{legend_x + i * (cell + 4):.1f}" y="{372 - cell + 2:.1f}" width="{cell}" height="{cell}" rx="3.5" fill="{c}"{op}/>'
-    legend += text(1140, 372, "More", 13, SUBTLE, 600, anchor="end")
+    legend += text(1134, 372, "More", 13, SUBTLE, 600, anchor="end")
 
     stamp = (f"Updated {datetime.now(timezone.utc):%b %-d, %Y} · refreshed daily by GitHub Actions"
              if total is not None else "Syncing with GitHub…")
     body = f"""
-{card_frame(12, 0, 1176, 400, 26, f'<circle cx="1188" cy="0" r="420" fill="url(#ga)"/><circle cx="12" cy="400" r="360" fill="url(#gb)"/>')}
+{card_frame(18, 0, 1164, 400, 26, f'<circle cx="1182" cy="0" r="420" fill="url(#ga)"/><circle cx="18" cy="400" r="360" fill="url(#gb)"/>')}
 {stat_svg}
-<line x1="{L}" y1="160" x2="1140" y2="160" stroke="{LINE}"/>
+<line x1="{L}" y1="160" x2="1134" y2="160" stroke="{LINE}"/>
 {months}{days_lbl}
 <g>{cells}</g>
 {text(L, 372, stamp, 13, SUBTLE, 500)}
