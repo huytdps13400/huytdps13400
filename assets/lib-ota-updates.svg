@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="356" viewBox="0 0 600 356" role="img" aria-label="supabase-expo-ota-updates — Self-hosted OTA updates for Expo on Supabase. Staged rollouts and auto-rollback on crash." fill="none">
+<title>supabase-expo-ota-updates — Self-hosted OTA updates for Expo on Supabase. Staged rollouts and auto-rollback on crash.</title>
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0.00" stop-color="#3ECF8E"/><stop offset="1.00" stop-color="#635BFF"/></linearGradient><radialGradient id="r"><stop offset="0" stop-color="#3ECF8E" stop-opacity="0.34"/><stop offset="1" stop-color="#3ECF8E" stop-opacity="0"/></radialGradient><clipPath id="card"><rect width="600" height="340" rx="22"/></clipPath><style>
+text{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif}
+.mono{font-family:ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}
+</style></defs>
+
+<g clip-path="url(#card)">
+  <rect width="600" height="340" fill="#0A2540"/>
+  <circle cx="580" cy="0" r="330" fill="url(#r)"/>
+</g>
+<rect x=".75" y=".75" width="598.5" height="338.5" rx="21.25" stroke="#1C3A5E" stroke-width="1.5"/>
+<rect x="36" y="36" width="56" height="56" rx="15" fill="url(#g)"/>
+<g transform="translate(50 50) scale(1.1667)" fill="none" stroke="#FFFFFF" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></g>
+<circle cx="546" cy="64" r="20" stroke="#FFFFFF" stroke-opacity=".22" stroke-width="1.5"/>
+<g transform="translate(537 55) scale(0.7500)" fill="none" stroke="#ADBDCC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></g>
+<text x="36" y="134" font-size="12" font-weight="700" fill="#9FF0CB" letter-spacing="1.6" >OTA · EXPO · SUPABASE</text>
+<text x="35" y="172" font-size="28" font-weight="700" fill="#FFFFFF" letter-spacing="-0.6" >supabase-expo-ota-updates</text>
+<text x="36" y="208" font-size="17" font-weight="400" fill="#ADBDCC" >Self-hosted OTA updates for Expo on Supabase.</text>
+<text x="36" y="234" font-size="17" font-weight="400" fill="#ADBDCC" >Staged rollouts and auto-rollback on crash.</text>
+<rect x="36" y="262" width="528" height="50" rx="11" fill="#061B31" stroke="#1C3A5E"/>
+<text x="56" y="292" font-size="14" xml:space="preserve" class="mono" ><tspan fill="#3ECF8E">$ </tspan><tspan fill="#FFFFFF">npx supabase-expo-ota-updates publish</tspan><tspan fill="#B9B5FF"> --rollout</tspan><tspan fill="#FF9E7A"> 50</tspan></text>
+</svg>

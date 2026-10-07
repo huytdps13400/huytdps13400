@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="152" viewBox="0 0 1200 152" role="img" aria-label="Built for the hard parts of mobile. Security, payments and delivery — where a bug costs money, not just a crash report." fill="none">
+<title>Built for the hard parts of mobile. Security, payments and delivery — where a bug costs money, not just a crash report.</title>
+<defs><linearGradient id="eb" x1="0" y1="0" x2="1" y2="0"><stop offset="0.00" stop-color="#635BFF"/><stop offset="1.00" stop-color="#00B8E6"/></linearGradient><style>
+text{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif}
+.mono{font-family:ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}
+.h{fill:#0A2540}.s{fill:#425466}@media (prefers-color-scheme: dark){.h{fill:#F6F9FC}.s{fill:#ADBDCC}}</style></defs>
+<text x="12" y="40" font-size="14" font-weight="800" fill="url(#eb)" letter-spacing="2.4" >01 — EXPERTISE</text><text x="10" y="96" font-size="42" font-weight="700" class="h" letter-spacing="-1.2" >Built for the hard parts of mobile.</text><text x="12" y="134" font-size="18" font-weight="400" class="s" >Security, payments and delivery — where a bug costs money, not just a crash report.</text>
+</svg>

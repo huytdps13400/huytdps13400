@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="356" viewBox="0 0 600 356" role="img" aria-label="react-native-iconify — 200,000+ icons from 150+ sets, loaded by name. Native caching via SDWebImage &amp; Glide." fill="none">
+<title>react-native-iconify — 200,000+ icons from 150+ sets, loaded by name. Native caching via SDWebImage &amp; Glide.</title>
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0.00" stop-color="#F96BEE"/><stop offset="1.00" stop-color="#FFB86C"/></linearGradient><radialGradient id="r"><stop offset="0" stop-color="#F96BEE" stop-opacity="0.34"/><stop offset="1" stop-color="#F96BEE" stop-opacity="0"/></radialGradient><clipPath id="card"><rect width="600" height="340" rx="22"/></clipPath><style>
+text{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif}
+.mono{font-family:ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}
+</style></defs>
+
+<g clip-path="url(#card)">
+  <rect width="600" height="340" fill="#0A2540"/>
+  <circle cx="580" cy="0" r="330" fill="url(#r)"/>
+</g>
+<rect x=".75" y=".75" width="598.5" height="338.5" rx="21.25" stroke="#1C3A5E" stroke-width="1.5"/>
+<rect x="36" y="36" width="56" height="56" rx="15" fill="url(#g)"/>
+<g transform="translate(50 50) scale(1.1667)" fill="none" stroke="#FFFFFF" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></g>
+<circle cx="546" cy="64" r="20" stroke="#FFFFFF" stroke-opacity=".22" stroke-width="1.5"/>
+<g transform="translate(537 55) scale(0.7500)" fill="none" stroke="#ADBDCC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></g>
+<text x="36" y="134" font-size="12" font-weight="700" fill="#FFC1F7" letter-spacing="1.6" >ICONS · iOS · ANDROID · WEB</text>
+<text x="35" y="172" font-size="28" font-weight="700" fill="#FFFFFF" letter-spacing="-0.6" >react-native-iconify</text>
+<text x="36" y="208" font-size="17" font-weight="400" fill="#ADBDCC" >200,000+ icons from 150+ sets, loaded by name.</text>
+<text x="36" y="234" font-size="17" font-weight="400" fill="#ADBDCC" >Native caching via SDWebImage &amp; Glide.</text>
+<rect x="36" y="262" width="528" height="50" rx="11" fill="#061B31" stroke="#1C3A5E"/>
+<text x="56" y="292" font-size="14" xml:space="preserve" class="mono" ><tspan fill="#C9D6E3">&lt;</tspan><tspan fill="#7FD3FF">IconifyIcon</tspan><tspan fill="#B9B5FF"> name</tspan><tspan fill="#C9D6E3">=</tspan><tspan fill="#FFD58A">"mdi:rocket-launch"</tspan><tspan fill="#B9B5FF"> size</tspan><tspan fill="#C9D6E3">={</tspan><tspan fill="#FF9E7A">32</tspan><tspan fill="#C9D6E3">} /&gt;</tspan></text>
+</svg>

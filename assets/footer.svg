@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="Let's build something people trust. Open to senior React Native roles, consulting and open-source collaboration." fill="none">
+<title>Let's build something people trust. Open to senior React Native roles, consulting and open-source collaboration.</title>
+<defs><filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="60"/></filter><pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" stroke="#FFFFFF" stroke-opacity=".07"/></pattern><linearGradient id="eb" x1="0" y1="0" x2="1" y2="0"><stop offset="0.00" stop-color="#C3BEFF"/><stop offset="1.00" stop-color="#80E9FF"/></linearGradient><clipPath id="card"><rect x="12" width="1176" height="288" rx="28"/></clipPath><clipPath id="band2"><polygon points="12,168 1188,168 1188,30 12,130"/></clipPath><style>
+text{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif}
+.mono{font-family:ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}
+
+.b1{animation:d1 19s ease-in-out infinite alternate}@keyframes d1{to{transform:translate(110px,50px)}}
+.b2{animation:d2 23s ease-in-out infinite alternate}@keyframes d2{to{transform:translate(-90px,60px)}}
+.b3{animation:d3 17s ease-in-out infinite alternate}@keyframes d3{to{transform:translate(80px,-50px)}}
+.b4{animation:d4 21s ease-in-out infinite alternate}@keyframes d4{to{transform:translate(-100px,-40px)}}
+</style></defs>
+
+<g clip-path="url(#card)">
+  <rect x="12" width="1176" height="288" fill="#0A2540"/>
+  <g transform="translate(0 120)"><g clip-path="url(#band2)">
+  <rect width="1200" height="600" fill="#635BFF"/>
+  <g filter="url(#blur)">
+    <circle class="b1" cx="160" cy="40" r="260" fill="#635BFF"/>
+    <circle class="b2" cx="470" cy="150" r="230" fill="#F96BEE"/>
+    <circle class="b3" cx="820" cy="30" r="270" fill="#00D4FF"/>
+    <circle class="b4" cx="1110" cy="230" r="240" fill="#FFB86C"/>
+    <circle class="b2" cx="660" cy="330" r="190" fill="#7A73FF"/>
+  </g>
+  <rect width="1200" height="600" fill="url(#grid)"/>
+</g></g>
+</g>
+<rect x="12.5" y=".5" width="1175" height="287" rx="27.5" stroke="#FFFFFF" stroke-opacity=".08"/>
+<text x="60" y="66" font-size="14" font-weight="800" fill="url(#eb)" letter-spacing="2.4" >LET'S TALK</text>
+<text x="58" y="118" font-size="42" font-weight="700" fill="#FFFFFF" letter-spacing="-1.2" >Let's build something people trust.</text>
+<text x="60" y="156" font-size="18" font-weight="400" fill="#ADBDCC" >Open to senior React Native roles, consulting and open-source collaboration.</text>
+</svg>

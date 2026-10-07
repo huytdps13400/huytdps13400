@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-label="Trần Đình Huy — Senior React Native Engineer. I build secure, production-grade mobile apps and open-source the infrastructure behind them." fill="none">
+<title>Trần Đình Huy — Senior React Native Engineer. I build secure, production-grade mobile apps and open-source the infrastructure behind them.</title>
+<defs><filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="60"/></filter><filter id="shadow" x="-40%" y="-80%" width="180%" height="360%"><feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#000814" flood-opacity=".45"/></filter><pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" stroke="#FFFFFF" stroke-opacity=".07"/></pattern><clipPath id="card"><rect x="12" y="0" width="1176" height="600" rx="28"/></clipPath><clipPath id="band"><polygon points="12,0 1188,0 1188,300 12,130"/></clipPath><linearGradient id="title" x1="0" y1="0" x2="1" y2="0"><stop offset="0.00" stop-color="#C3BEFF"/><stop offset="1.00" stop-color="#80E9FF"/></linearGradient><linearGradient id="cc" x1="0" y1="0" x2="1" y2="1"><stop offset="0.00" stop-color="#635BFF"/><stop offset="0.50" stop-color="#8F6BFF"/><stop offset="1.00" stop-color="#00D4FF"/></linearGradient><linearGradient id="ok" x1="0" y1="0" x2="1" y2="1"><stop offset="0.00" stop-color="#3ECF8E"/><stop offset="1.00" stop-color="#00D4FF"/></linearGradient><linearGradient id="shine" x1="0" y1="0" x2="1" y2="0"><stop offset="0.00" stop-color="#FFFFFF00"/><stop offset="0.50" stop-color="#FFFFFF66"/><stop offset="1.00" stop-color="#FFFFFF00"/></linearGradient><radialGradient id="pglow"><stop offset="0" stop-color="#635BFF" stop-opacity="0.55"/><stop offset="1" stop-color="#635BFF" stop-opacity="0"/></radialGradient><clipPath id="btn"><rect x="854" y="486" width="204" height="50" rx="12"/></clipPath><clipPath id="ccard"><rect x="854" y="170" width="204" height="128" rx="14"/></clipPath><style>
+text{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif}
+.mono{font-family:ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}
+
+.b1{animation:d1 19s ease-in-out infinite alternate}@keyframes d1{to{transform:translate(110px,50px)}}
+.b2{animation:d2 23s ease-in-out infinite alternate}@keyframes d2{to{transform:translate(-90px,60px)}}
+.b3{animation:d3 17s ease-in-out infinite alternate}@keyframes d3{to{transform:translate(80px,-50px)}}
+.b4{animation:d4 21s ease-in-out infinite alternate}@keyframes d4{to{transform:translate(-100px,-40px)}}
+
+.float{animation:fl 6s ease-in-out infinite alternate}
+.float2{animation:fl 7s 1.2s ease-in-out infinite alternate}
+.float3{animation:fl 8s .6s ease-in-out infinite alternate}
+@keyframes fl{to{transform:translateY(-12px)}}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pu 2.4s ease-out infinite}
+@keyframes pu{from{transform:scale(1);opacity:.7}to{transform:scale(3);opacity:0}}
+.shine{animation:sh 3.8s ease-in-out infinite}
+@keyframes sh{0%{transform:translateX(-120px)}55%,100%{transform:translateX(320px)}}
+</style></defs>
+
+<g clip-path="url(#card)">
+  <rect x="12" width="1176" height="600" fill="#0A2540"/>
+  <rect x="12" width="1176" height="600" fill="url(#grid)" opacity=".5"/>
+  <g clip-path="url(#band)">
+  <rect width="1200" height="600" fill="#635BFF"/>
+  <g filter="url(#blur)">
+    <circle class="b1" cx="160" cy="40" r="260" fill="#635BFF"/>
+    <circle class="b2" cx="470" cy="150" r="230" fill="#F96BEE"/>
+    <circle class="b3" cx="820" cy="30" r="270" fill="#00D4FF"/>
+    <circle class="b4" cx="1110" cy="230" r="240" fill="#FFB86C"/>
+    <circle class="b2" cx="660" cy="330" r="190" fill="#7A73FF"/>
+  </g>
+  <rect width="1200" height="600" fill="url(#grid)"/>
+</g>
+  <ellipse cx="960" cy="560" rx="320" ry="160" fill="url(#pglow)"/>
+
+  <!-- Copy -->
+  <rect x="72" y="196" width="281" height="38" rx="19" fill="#FFFFFF" fill-opacity=".07" stroke="#FFFFFF" stroke-opacity=".14"/>
+  <circle class="pulse" cx="94" cy="215" r="5" fill="#3ECF8E"/>
+  <circle cx="94" cy="215" r="5" fill="#3ECF8E"/>
+  <text x="110" y="220" font-size="15" font-weight="600" fill="#E3E8EE" xml:space="preserve">React Native  ·  iOS  ·  Android</text>
+  <text x="69" y="306" font-size="66" font-weight="700" fill="#FFFFFF" letter-spacing="-1.5" >Trần Đình Huy</text>
+  <text x="72" y="354" font-size="30" font-weight="600" fill="url(#title)" letter-spacing="-0.3" >Senior React Native Engineer</text>
+  <text x="72" y="402" font-size="20" font-weight="400" fill="#ADBDCC" >I build secure, production-grade mobile apps —</text>
+  <text x="72" y="431" font-size="20" font-weight="400" fill="#ADBDCC" >and open-source the infrastructure behind them.</text>
+  <text x="72" y="516" font-size="36" font-weight="700" fill="#FFFFFF" letter-spacing="-0.5" >5+</text><text x="72" y="542" font-size="12" font-weight="700" fill="#6B819B" letter-spacing="1.4" >YEARS SHIPPING</text><line x1="242" y1="482" x2="242" y2="548" stroke="#1C3A5E" stroke-width="1.5"/><text x="268" y="516" font-size="36" font-weight="700" fill="#FFFFFF" letter-spacing="-0.5" >4</text><text x="268" y="542" font-size="12" font-weight="700" fill="#6B819B" letter-spacing="1.4" >OPEN-SOURCE LIBS</text><line x1="438" y1="482" x2="438" y2="548" stroke="#1C3A5E" stroke-width="1.5"/><text x="464" y="516" font-size="36" font-weight="700" fill="#FFFFFF" letter-spacing="-0.5" >3</text><text x="464" y="542" font-size="12" font-weight="700" fill="#6B819B" letter-spacing="1.4" >PAYMENT GATEWAYS</text>
+
+  <!-- Phone -->
+  <g class="float">
+    <g filter="url(#shadow)">
+      <rect x="820" y="36" width="272" height="548" rx="46" fill="#0B1220" stroke="#2A3B55" stroke-width="1.5"/>
+    </g>
+    <rect x="830" y="46" width="252" height="528" rx="37" fill="#F6F9FC"/>
+    <rect x="914" y="58" width="84" height="26" rx="13" fill="#0B1220"/>
+    <text x="858" y="77" font-size="14" font-weight="600" fill="#0A2540" >9:41</text>
+    <g fill="#0A2540"><rect x="1016" y="70" width="3" height="7" rx="1"/><rect x="1021" y="67" width="3" height="10" rx="1"/><rect x="1026" y="64" width="3" height="13" rx="1"/></g>
+    <rect x="1035" y="65" width="22" height="11" rx="3" stroke="#0A2540" stroke-opacity=".5"/>
+    <rect x="1037" y="67" width="16" height="7" rx="1.5" fill="#0A2540"/>
+
+    <text x="854" y="138" font-size="24" font-weight="700" fill="#0A2540" letter-spacing="-0.4" >Checkout</text>
+    <g transform="translate(854 150) scale(0.5417)" fill="none" stroke="#3ECF8E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></g>
+    <text x="872" y="161" font-size="12" font-weight="500" fill="#6B7C93" >Secured connection</text>
+
+    <g clip-path="url(#ccard)">
+      <rect x="854" y="170" width="204" height="128" fill="url(#cc)"/>
+      <circle cx="1040" cy="180" r="70" fill="#F96BEE" opacity=".45"/>
+      <circle cx="880" cy="300" r="60" fill="#00D4FF" opacity=".35"/>
+    </g>
+    <rect x="872" y="190" width="30" height="22" rx="5" fill="#FFE2A8" fill-opacity=".9"/>
+    <path d="M1028 194a10 10 0 0 1 0 16M1034 190a16 16 0 0 1 0 24" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity=".85"/>
+    <text x="872" y="262" font-size="16" font-weight="600" fill="#FFFFFF" class="mono" letter-spacing="1" >•••• 4242</text>
+    <text x="872" y="283" font-size="10" font-weight="600" fill="#FFFFFF" letter-spacing="1.6" opacity=".85">TRAN DINH HUY</text>
+    <circle cx="1024" cy="278" r="9" fill="#FFFFFF" fill-opacity=".55"/><circle cx="1036" cy="278" r="9" fill="#FFFFFF" fill-opacity=".35"/>
+
+    <circle cx="864" cy="323" r="10" fill="url(#ok)"/><g transform="translate(857 316) scale(0.5833)" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></g><text x="884" y="328" font-size="14" font-weight="500" fill="#0A2540" >Certificate pinned</text><line x1="854" y1="344" x2="1058" y2="344" stroke="#E3E8EE"/><circle cx="864" cy="363" r="10" fill="url(#ok)"/><g transform="translate(857 356) scale(0.5833)" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></g><text x="884" y="368" font-size="14" font-weight="500" fill="#0A2540" >Face ID verified</text><line x1="854" y1="384" x2="1058" y2="384" stroke="#E3E8EE"/><circle cx="864" cy="403" r="10" fill="url(#ok)"/><g transform="translate(857 396) scale(0.5833)" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></g><text x="884" y="408" font-size="14" font-weight="500" fill="#0A2540" >Risk check passed</text><line x1="854" y1="424" x2="1058" y2="424" stroke="#E3E8EE"/>
+    <text x="854" y="464" font-size="13" font-weight="500" fill="#6B7C93" >Total</text>
+    <text x="1058" y="464" font-size="18" font-weight="700" fill="#0A2540" text-anchor="end" >₫1.250.000</text>
+    <rect x="854" y="486" width="204" height="50" rx="12" fill="#635BFF"/>
+    <g clip-path="url(#btn)"><rect class="shine" x="810" y="486" width="70" height="50" fill="url(#shine)" transform="skewX(-20)"/></g>
+    <text x="956" y="516" font-size="15" font-weight="600" fill="#FFFFFF" text-anchor="middle" >Pay with Face ID</text>
+    <rect x="906" y="558" width="100" height="5" rx="2.5" fill="#0A2540" fill-opacity=".25"/>
+  </g>
+
+  <!-- Floating toasts -->
+  <g class="float2" filter="url(#shadow)">
+    <rect x="566" y="168" width="266" height="68" rx="16" fill="#FFFFFF"/>
+    <circle cx="602" cy="202" r="18" fill="url(#ok)"/>
+    <g transform="translate(592 192) scale(0.8333)" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></g>
+    <text x="632" y="197" font-size="14" font-weight="700" fill="#0A2540" >OTA update shipped</text>
+    <text x="632" y="217" font-size="12" font-weight="500" fill="#6B7C93" >Rolled out to 50% · no review</text>
+  </g>
+  <g class="float3" filter="url(#shadow)">
+    <rect x="978" y="86" width="196" height="68" rx="16" fill="#FFFFFF"/>
+    <circle cx="1014" cy="120" r="18" fill="url(#cc)"/>
+    <g transform="translate(1004 110) scale(0.8333)" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></g>
+    <text x="1044" y="115" font-size="14" font-weight="700" fill="#0A2540" >OTP auto-filled</text>
+    <text x="1044" y="135" font-size="12" font-weight="500" fill="#6B7C93" >No SMS permission</text>
+  </g>
+</g>
+<rect x="12.5" y=".5" width="1175" height="599" rx="27.5" stroke="#FFFFFF" stroke-opacity=".08"/>
+</svg>
