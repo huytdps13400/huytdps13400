@@ -10,6 +10,7 @@ renders it through its image proxy. Edit the copy/data below, re-run, commit.
 When Pillow and the Inter font are installed, text is measured with real font
 metrics and the build fails on any overflow, so layouts stay pixel-tight.
 """
+import base64
 import glob
 import json
 import os
@@ -17,6 +18,8 @@ import sys
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from xml.sax.saxutils import escape
+
+from typeset import Glyphs, width as tw_
 
 OUT = Path(__file__).parent
 
@@ -57,6 +60,8 @@ ICONS = {
     "music": '<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',
     "check": '<polyline points="20 6 9 17 4 12"/>',
     "arrow-up": '<line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/>',
+    "faceid": ('<path d="M7 3H5a2 2 0 0 0-2 2v2M17 3h2a2 2 0 0 1 2 2v2M7 21H5a2 2 0 0 1-2-2v-2M17 21h2a2 2 0 0 0 2-2v-2"/>'
+               '<path d="M9 9v1M15 9v1M12 9v4h-1M9 16c1.7 1.2 4.3 1.2 6 0"/>'),
     "arrow-up-right": '<line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>',
     "download": '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>',
 }
@@ -243,6 +248,237 @@ def mesh(clip_id):
   <rect width="1200" height="600" filter="url(#grain)" opacity=".35" style="mix-blend-mode:overlay"/>
 </g>"""
 
+
+# ── Porcelain & Ink (2026 redesign) ──────────────────────────────────────────
+# Light editorial system: white cards, ink navy type, one blurple accent. Every
+# value below is an OKLCH ramp step; contrast is measured against the surface the
+# text actually sits on (white unless noted).
+P = {
+    "surface": "#FFFFFF",
+    "sunken": "#F3F6FA",      # inset panels, chips
+    "line": "#E1E5EA",        # hairlines, dividers
+    "text": "#0B223E",        # 16.00:1
+    "text2": "#293E5C",       # 10.84:1 — secondary headings
+    "muted": "#525F6F",       # 6.51:1 — body copy
+    "subtle": "#6B7583",      # 4.67:1 — meta, small caps labels
+    "accent": "#5957ED",      # 5.24:1 — eyebrows, links, primary fill
+    "accentHi": "#666AF9",
+    "accentLo": "#4F46E5",
+    "success": "#009A5C",     # icon fill only (3.64:1 non-text)
+}
+INK_RGB = "11 34 62"  # P["text"] as rgb, for tinted shadows
+
+
+def elevation(id_, small=False):
+    """Two-layer tinted shadow: a crisp contact shadow plus a soft ambient one."""
+    a, b = ((1, 1, .06), (4, 6, .05)) if small else ((1, 1.5, .05), (12, 16, .08))
+    return (f'<filter id="{id_}" x="-10%" y="-10%" width="120%" height="140%" color-interpolation-filters="sRGB">'
+            f'<feGaussianBlur in="SourceAlpha" stdDeviation="{a[1]}"/><feOffset dy="{a[0]}" result="a1"/>'
+            f'<feFlood flood-color="rgb({INK_RGB})" flood-opacity="{a[2]}"/><feComposite in2="a1" operator="in" result="s1"/>'
+            f'<feGaussianBlur in="SourceAlpha" stdDeviation="{b[1]}"/><feOffset dy="{b[0]}" result="a2"/>'
+            f'<feFlood flood-color="rgb({INK_RGB})" flood-opacity="{b[2]}"/><feComposite in2="a2" operator="in" result="s2"/>'
+            '<feMerge><feMergeNode in="s2"/><feMergeNode in="s1"/><feMergeNode in="SourceGraphic"/></feMerge></filter>')
+
+
+def surface_card(x, y, w, h, rx, inner=""):
+    """White card: elevation shadow, clipped content, 1px ink hairline at 8%."""
+    return (f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{P["surface"]}" filter="url(#elev)"/>'
+            f'<clipPath id="cardclip"><rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}"/></clipPath>'
+            f'<g clip-path="url(#cardclip)">{inner}</g>'
+            f'<rect x="{x + .5}" y="{y + .5}" width="{w - 1}" height="{h - 1}" rx="{rx - .5}" '
+            f'stroke="rgb({INK_RGB})" stroke-opacity=".08"/>')
+
+
+def embed(path):
+    return "data:image/webp;base64," + base64.b64encode((OUT / path).read_bytes()).decode()
+
+
+def porcelain_hero():
+    W, H = 1200, 660
+    CX, CY, CW, CH, R = 36, 24, 1128, 600, 28  # margins leave room for the shadow to fade out
+    L = CX + 56                              # copy column
+    # Hero render (Codex): 1024px square, placed at S×S. Screen + island measured in source px.
+    AX, AY, S = 577, 14, 620
+    k = S / 1024
+    sx, sy, sw, sh, sr = AX + 341 * k, AY + 116 * k, 342 * k, 773 * k, 50 * k
+    ix, iy, iw, ih = AX + 456 * k, AY + 126 * k, 110 * k, 31 * k
+    g = Glyphs()
+    copy_max = AX + 40 * k - 24 - L           # stop 24px short of the ribbon's leftmost edge
+
+    # ── copy ──
+    off = 10
+    name_size = 78
+    body = g.text(L, 148 + off, "React Native · iOS · Android", 20, P["accent"], 600, tracking=.01, maxw=copy_max)
+    body += g.text(L - 3, 230 + off, "Trần Đình Huy", name_size, P["text"], 700, tracking=-.035, maxw=copy_max)
+    body += g.text(L - 1, 284 + off, "Senior React Native Engineer", 32, P["text2"], 650, tracking=-.02, maxw=copy_max)
+    body += g.text(L, 336 + off, "I build secure, production-grade mobile apps —", 21, P["muted"], 400, maxw=copy_max)
+    body += g.text(L, 368 + off, "and open-source the infrastructure behind them.", 21, P["muted"], 400, maxw=copy_max)
+
+    stats = [("5+", "YEARS SHIPPING"), ("4", "OPEN-SOURCE LIBS"), ("3", "PAYMENT GATEWAYS")]
+    x = L
+    for i, (n, lbl) in enumerate(stats):
+        if i:
+            body += f'<line x1="{x:.1f}" y1="{430 + off}" x2="{x:.1f}" y2="{504 + off}" stroke="{P["line"]}"/>'
+            x += 36
+        body += g.text(x - 1, 466 + off, n, 46, P["text"], 700, tracking=-.03, tnum=True)
+        body += g.text(x, 496 + off, lbl, 13.5, P["subtle"], 600, tracking=.08)
+        x += max(tw_(n, 46, 700, tracking=-.03), tw_(lbl, 13.5, 600, tracking=.08)) + 36
+    # Below the ribbon's left lobe the stats may run up to the phone frame (source x≈395).
+    if x - 36 > AX + 395 * k - 32:
+        raise SystemExit(f"✗ hero stats collide with the phone ({x - 36:.0f}px)")
+
+    # ── phone screen UI (vector, drawn over the render's keyed screen) ──
+    u = ""
+    u += f'<rect width="{sw:.2f}" height="{sh:.2f}" rx="{sr:.2f}" fill="{P["surface"]}"/>'
+    u += g.text(22, 20, "9:41", 12.5, P["text"], 600)
+    u += (f'<g fill="{P["text"]}"><rect x="{sw - 64:.1f}" y="13" width="3" height="6" rx="1"/>'
+          f'<rect x="{sw - 59:.1f}" y="11" width="3" height="8" rx="1"/><rect x="{sw - 54:.1f}" y="9" width="3" height="10" rx="1"/></g>'
+          f'<rect x="{sw - 45:.1f}" y="9.5" width="21" height="10" rx="3" stroke="{P["text"]}" stroke-opacity=".45"/>'
+          f'<rect x="{sw - 43:.1f}" y="11.5" width="15" height="6" rx="1.5" fill="{P["text"]}"/>')
+    pad = 15
+    u += g.text(pad + 2, 80, "Checkout", 23, P["text"], 700, tracking=-.02)
+    # card on file
+    py = 98
+    u += (f'<rect x="{pad}" y="{py}" width="{sw - 2 * pad:.1f}" height="56" rx="12" fill="{P["sunken"]}" stroke="{P["line"]}"/>'
+          + g.text(pad + 14, py + 23, "VISA", 13, "#1A1F71", 800, tracking=.02)
+          + g.text(sw - pad - 12, py + 22, "Change", 10.5, P["accent"], 600, anchor="end")
+          + g.text(pad + 14, py + 43, "•••• 4242", 12.5, P["text2"], 500, family="mono", tracking=.04))
+    rows = ["Certificate pinned", "Face ID verified", "Risk check passed"]
+    for i, r in enumerate(rows):
+        y = 192 + i * 31
+        u += ("<g>"
+              f'<circle cx="{pad + 10}" cy="{y - 4}" r="8.5" fill="{P["success"]}"/>'
+              + icon("check", pad + 4, y - 10, 12, "#FFFFFF", 3)
+              + g.text(pad + 27, y, r, 11.5, P["text2"], 500, maxw=sw - 2 * pad - 30) + "</g>")
+    u += f'<line x1="{pad}" y1="276" x2="{sw - pad:.1f}" y2="276" stroke="{P["line"]}"/>'
+    u += g.text(pad + 1, 304, "Total", 12, P["subtle"], 500)
+    u += g.text(sw - pad, 305, "₫1.250.000", 17, P["text"], 700, anchor="end", tracking=-.01, tnum=True)
+    by, bw, bh = 324, sw - 2 * pad, 46
+    label = "Pay with Face ID"
+    gw = 16 + 8 + tw_(label, 13.5, 600)
+    gx = pad + (bw - gw) / 2
+    u += (f'<rect x="{pad}" y="{by}" width="{bw:.1f}" height="{bh}" rx="12" fill="url(#btn)"/>'
+          f'<rect x="{pad + .5}" y="{by + .5}" width="{bw - 1:.1f}" height="{bh - 1}" rx="11.5" stroke="#FFFFFF" stroke-opacity=".22"/>'
+          f'<clipPath id="btnclip"><rect x="{pad}" y="{by}" width="{bw:.1f}" height="{bh}" rx="12"/></clipPath>'
+          f'<g clip-path="url(#btnclip)"><polygon class="shine" points="{pad - 60},{by + bh} {pad - 30},{by} {pad + 6},{by} {pad - 24},{by + bh}" fill="#FFFFFF" fill-opacity=".22"/></g>'
+          + icon("faceid", round(gx, 1), by + 15, 16, "#FFFFFF", 2.2)
+          + g.text(gx + 24, by + 28, label, 13.5, "#FFFFFF", 600))
+    lock_lbl = "Secured with SSL pinning"
+    lw = 11 + 6 + tw_(lock_lbl, 10.5, 500)
+    lx = (sw - lw) / 2
+    u += icon("lock", round(lx, 1), by + bh + 21, 11, P["subtle"], 2.4) + g.text(lx + 17, by + bh + 30, lock_lbl, 10.5, P["subtle"], 500)
+    u += f'<rect x="{sw / 2 - 36:.1f}" y="{sh - 14:.1f}" width="72" height="4" rx="2" fill="{P["text"]}" fill-opacity=".22"/>'
+    if (OUT / "art/screen.webp").exists():     # a real screenshot replaces the vector checkout UI
+        u = f'<image href="{embed("art/screen.webp")}" width="{sw:.2f}" height="{sh:.2f}" preserveAspectRatio="xMidYMin slice"/>'
+    screen = (f'<clipPath id="scr"><rect x="{sx:.2f}" y="{sy:.2f}" width="{sw:.2f}" height="{sh:.2f}" rx="{sr:.2f}"/></clipPath>'
+              f'<g clip-path="url(#scr)"><g transform="translate({sx:.2f} {sy:.2f})">{u}</g></g>'
+              f'<rect x="{ix:.2f}" y="{iy:.2f}" width="{iw:.2f}" height="{ih:.2f}" rx="{ih / 2:.2f}" fill="#05070A"/>')
+
+    art = f'<image href="{embed("art/hero-art.webp")}" x="{AX}" y="{AY}" width="{S}" height="{S}"/>'
+    defs = (elevation("elev")
+            + f'<linearGradient id="btn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{P["accentHi"]}"/>'
+              f'<stop offset="1" stop-color="{P["accentLo"]}"/></linearGradient>')
+    css = """
+.shine{animation:sh 4.5s 1.4s cubic-bezier(.4,0,.2,1) infinite}@keyframes sh{0%{transform:translateX(0)}35%,100%{transform:translateX(260px)}}
+"""
+    full = surface_card(CX, CY, CW, CH, R, art + screen) + body
+    write("hero.svg", W, H,
+          "Trần Đình Huy — Senior React Native Engineer. I build secure, production-grade mobile apps "
+          "and open-source the infrastructure behind them.", full, defs + g.svg_defs(), css)
+
+
+def porcelain_button(name, label, mark, primary=False):
+    g = Glyphs()
+    h, size, m = 52, 17, 16                  # pill height, label size, shadow margin
+    lw = tw_(label, size, 600)
+    pw = round(24 + 20 + 12 + lw + (12 + 16 + 22 if primary else 26))
+    W, H = pw + 2 * m, h + 2 * m
+    x, y = m, m - 3
+    fg = "#FFFFFF" if primary else P["text"]
+    if primary:
+        pill = (f'<rect x="{x}" y="{y}" width="{pw}" height="{h}" rx="{h / 2}" fill="url(#bg)" filter="url(#glow)"/>'
+                f'<rect x="{x + .5}" y="{y + .5}" width="{pw - 1}" height="{h - 1}" rx="{h / 2 - .5}" stroke="#FFFFFF" stroke-opacity=".22"/>')
+        defs = (f'<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{P["accentHi"]}"/>'
+                f'<stop offset="1" stop-color="{P["accentLo"]}"/></linearGradient>'
+                '<filter id="glow" x="-20%" y="-40%" width="140%" height="200%" color-interpolation-filters="sRGB">'
+                '<feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#5957ED" flood-opacity=".32"/></filter>')
+    else:
+        pill = (f'<rect x="{x}" y="{y}" width="{pw}" height="{h}" rx="{h / 2}" fill="#FFFFFF" filter="url(#elev)"/>'
+                f'<rect x="{x + .5}" y="{y + .5}" width="{pw - 1}" height="{h - 1}" rx="{h / 2 - .5}" stroke="rgb({INK_RGB})" stroke-opacity=".12"/>')
+        defs = elevation("elev", small=True)
+    body = pill + brand(mark, x + 24, y + 16, 20, fg) + g.text(x + 56, y + 32.5, label, size, fg, 600)
+    if primary:
+        body += icon("arrow-up-right", round(x + 56 + lw + 12), y + 18, 16, fg, 2.4)
+    write(name, W, H, label, body, defs + g.svg_defs())
+    return W, H
+
+
+
+# Page-level colours for artwork that sits directly on GitHub's page (headers), per theme.
+THEMES = {
+    "light": {"text": P["text"], "accent": P["accent"]},            # 16.00:1 / 5.24:1 on #FFFFFF
+    "dark": {"text": "#F1F4F7", "accent": "#8F9BFB"},               # 17.14:1 / 7.43:1 on #0D1117
+}
+
+
+def porcelain_header(name, eyebrow, title):
+    """Section header, emitted twice (name.svg + name-dark.svg) for a <picture> theme switch."""
+    for theme, c in THEMES.items():
+        g = Glyphs()
+        body = (g.text(38, 40, eyebrow, 17, c["accent"], 700, tracking=.16, maxw=1124)
+                + g.text(35, 104, title, 52, c["text"], 700, tracking=-.035, maxw=1124))
+        write(name if theme == "light" else name.replace(".svg", "-dark.svg"),
+              1200, 128, f"{eyebrow} {title}", body, g.svg_defs())
+
+
+def art_icon(key, x, y, size):
+    """A Codex-rendered glass icon if present, else the line icon in the accent colour."""
+    f = OUT / f"art/icons/{key}.webp"
+    if f.exists():
+        return f'<image href="{embed(f"art/icons/{key}.webp")}" x="{x}" y="{y}" width="{size}" height="{size}"/>'
+    s = size * .6
+    return icon(key, x + (size - s) / 2, y + (size - s) / 2, s, P["accent"], 1.8)
+
+
+EXPERTISE_P = [
+    ("lock", "Mobile security", ["SSL pinning, biometric auth and hardened key", "storage that hold up against real MITM attacks."],
+     ["SSL Pinning", "Biometrics", "Keystore"]),
+    ("card", "Payments", ["Production checkout flows on Vietnam's leading", "gateways — built for real money, not demos."],
+     ["VNPay", "ZaloPay", "Payoo"]),
+    ("zap", "Release engineering", ["Automated pipelines and OTA updates that ship", "fixes in minutes instead of review cycles."],
+     ["Fastlane", "Expo Updates", "TestFlight"]),
+    ("cpu", "New Architecture", ["Native modules on Nitro & TurboModules, 60 fps", "UI with Reanimated, state that scales."],
+     ["Nitro", "TurboModules", "Reanimated"]),
+]
+
+
+def porcelain_expertise():
+    X0, Y0, GAP = 36, 24, 24
+    cw, ch, R, pad = (1128 - GAP) // 2, 344, 24, 40
+    W, H = 1200, Y0 + 2 * ch + GAP + 36
+    g = Glyphs()
+    body = ""
+    for i, (ic, title, desc, chips) in enumerate(EXPERTISE_P):
+        x = X0 + (i % 2) * (cw + GAP)
+        y = Y0 + (i // 2) * (ch + GAP)
+        inner = cw - 2 * pad
+        body += (f'<rect x="{x}" y="{y}" width="{cw}" height="{ch}" rx="{R}" fill="{P["surface"]}" filter="url(#elev)"/>'
+                 f'<rect x="{x + .5}" y="{y + .5}" width="{cw - 1}" height="{ch - 1}" rx="{R - .5}" stroke="rgb({INK_RGB})" stroke-opacity=".08"/>'
+                 + art_icon(ic, x + pad - 14, y + 20, 120)
+                 + g.text(x + pad - 1, y + 186, title, 30, P["text"], 700, tracking=-.025, maxw=inner)
+                 + g.text(x + pad, y + 224, desc[0], 19, P["muted"], maxw=inner)
+                 + g.text(x + pad, y + 252, desc[1], 19, P["muted"], maxw=inner))
+        cx = x + pad
+        for c in chips:
+            w = round(tw_(c, 15, 600) + 28)
+            if cx + w > x + cw - pad:
+                raise SystemExit(f"✗ chip row overflows in {title!r} at {c!r}")
+            body += (f'<rect x="{cx}" y="{y + 276}" width="{w}" height="34" rx="17" fill="{P["sunken"]}" stroke="{P["line"]}"/>'
+                     + g.text(cx + 14, y + 298, c, 15, P["text2"], 600))
+            cx += w + 8
+    write("expertise.svg", W, H,
+          "Expertise: mobile security, payments, release engineering and the React Native New Architecture.",
+          body, elevation("elev") + g.svg_defs())
 
 # ── Hero ─────────────────────────────────────────────────────────────────────
 def hero():
@@ -761,19 +997,18 @@ if __name__ == "__main__":
     if sys.argv[1:] == ["activity"]:
         activity()
         sys.exit()
-    hero()
-    button("btn-x.svg", "Follow on X", "x", primary=True)
-    button("btn-linkedin.svg", "LinkedIn", "linkedin")
-    button("btn-npm.svg", "npm packages", "npm")
-    header("h-expertise.svg", "01 — EXPERTISE", "Built for the hard parts of mobile.",
-           "Security, payments and delivery — where a bug costs money, not just a crash report.")
+    porcelain_hero()
+    for args in (("btn-x.svg", "Follow on X", "x", True), ("btn-linkedin.svg", "LinkedIn", "linkedin"),
+                 ("btn-npm.svg", "npm packages", "npm")):
+        print(args[0], porcelain_button(*args))
+    porcelain_header("h-expertise.svg", "01 — EXPERTISE", "Built for the hard parts of mobile.")
     header("h-open-source.svg", "02 — OPEN SOURCE", "Libraries born in production.",
            "Each package started as a real problem in a shipping app. Now it solves yours.")
     header("h-x.svg", "03 — ON X", "Building in public.",
            "Deep-dives, launches and production lessons for the React Native community.")
     header("h-activity.svg", "04 — ACTIVITY", "Shipping, consistently.",
            "A year of contributions, refreshed every day.")
-    expertise()
+    porcelain_expertise()
     flagship()
     for lib in LIBS:
         lib_card(*lib)

@@ -1,1 +1,12 @@
 __pycache__/
+.venv/
+# Design scratch (mockups, raw renders, previews, personal screenshots) stays local;
+# only the reproducible pipeline scripts and Codex prompts are tracked.
+design/**
+!design/
+!design/art/
+!design/art/*.py
+!design/art/prompt-*.md
+!design/mockups/
+!design/mockups/brief.md
+!design/mockups/dir-*.md

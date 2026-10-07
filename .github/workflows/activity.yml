@@ -8,6 +8,7 @@ on:
     branches: [master]
     paths:
       - assets/build.py
+      - assets/typeset.py
       - assets/fetch_stats.py
       - .github/workflows/activity.yml
 
@@ -24,9 +25,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Same fonts + Pillow as local builds, so text measurement is identical.
+      # Inter for the legacy Pillow-measured cards; HarfBuzz + fontTools outline the new
+      # cards from the fonts vendored in assets/fonts, so output never depends on the runner.
       - name: Install build dependencies
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq fonts-inter python3-pil
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq fonts-inter
+          python3 -m venv .venv && .venv/bin/pip install -q -r assets/requirements.txt
 
       - name: Fetch contribution calendar
         env:
@@ -47,10 +51,10 @@ jobs:
       - name: Fetch npm and GitHub stats
         env:
           GH_TOKEN: ${{ github.token }}
-        run: /usr/bin/python3 assets/fetch_stats.py
+        run: .venv/bin/python assets/fetch_stats.py
 
       - name: Render artwork
-        run: /usr/bin/python3 assets/build.py
+        run: .venv/bin/python assets/build.py
 
       - name: Commit
         run: |
