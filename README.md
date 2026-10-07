@@ -1,163 +1,138 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6366F1,100:8B5CF6&height=220&section=header&text=Trần%20Đình%20Huy&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=React%20Native%20Developer%20%7C%20Open-Source%20Author&descAlignY=55&descSize=20"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6366F1,100:8B5CF6&height=200&section=header&text=Trần%20Đình%20Huy&fontSize=56&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=Senior%20React%20Native%20Engineer%20·%20Open-Source%20Author&descAlignY=58&descSize=18"/>
 
+**I build secure, production-grade mobile apps — and open-source the tools I wish I'd had.**
+
+<a href="https://x.com/TrninhHuy1"><img src="https://img.shields.io/badge/Follow%20on%20X-000000?style=for-the-badge&logo=x&logoColor=white" /></a>
+<a href="https://www.linkedin.com/in/%C4%91%C3%ACnh-huy-tr%E1%BA%A7n-845963216/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+<a href="https://www.npmjs.com/~huymobile"><img src="https://img.shields.io/badge/npm-~huymobile-CB3837?style=for-the-badge&logo=npm&logoColor=white" /></a>
 <br/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=800&color=8B5CF6&center=true&vCenter=true&width=600&lines=5%2B+years+shipping+React+Native+apps;Building+scalable%2C+secure+mobile+products;Author+of+4+open-source+RN+libraries;SSL+Pinning+%7C+Biometrics+%7C+Payments+%7C+OTA" alt="Typing SVG" />
-
-<br/><br/>
-
-<a href="https://github.com/huytdps13400?tab=repositories">
-  <img src="https://img.shields.io/github/stars/huytdps13400?affiliations=OWNER&style=for-the-badge&color=8B5CF6&labelColor=1a1a2e" />
-</a>
-<a href="https://github.com/huytdps13400?tab=followers">
-  <img src="https://img.shields.io/github/followers/huytdps13400?style=for-the-badge&color=6366F1&labelColor=1a1a2e" />
-</a>
-<img src="https://komarev.com/ghpvc/?username=huytdps13400&style=for-the-badge&color=8B5CF6&labelColor=1a1a2e&label=PROFILE+VIEWS" />
+<img src="https://img.shields.io/github/stars/huytdps13400?affiliations=OWNER&style=flat-square&label=GitHub%20stars&color=8B5CF6&labelColor=1a1a2e" />
+<img src="https://img.shields.io/github/followers/huytdps13400?style=flat-square&label=followers&color=6366F1&labelColor=1a1a2e" />
+<img src="https://img.shields.io/badge/npm%20packages-5-CB3837?style=flat-square&labelColor=1a1a2e" />
+<img src="https://img.shields.io/badge/experience-5%2B%20years-22C55E?style=flat-square&labelColor=1a1a2e" />
 
 </div>
 
-<br/>
+---
 
-## 🚀 About Me
+## 👋 About
 
-```yaml
-name: Trần Đình Huy
-role: React Native Developer
-experience: 5+ years
-focus: [Mobile Architecture, Secure Payments, OTA Updates, Open Source]
-currently: Building performant, secure, production-grade mobile apps
-fun_fact: I turn "it works on my machine" into "it ships to 2 app stores"
-```
+React Native engineer with **5+ years** shipping apps to the App Store and Google Play. I focus on the hard parts of mobile:
 
-I design and ship **high-performance, production-grade mobile applications** — from architecture to App Store release. I specialize in secure payment integrations, biometric auth, SSL pinning, and zero-downtime OTA delivery. I also maintain open-source libraries that solve problems I've hit in real production apps.
+- 🔐 **Security** — SSL pinning, biometric auth, Keychain/Keystore, anti-fraud
+- 💳 **Payments** — VNPay, ZaloPay, Payoo integrations in production fintech apps
+- ⚡ **Delivery** — OTA updates, Fastlane CI/CD, zero-downtime releases
+- 🧬 **New Architecture** — TurboModules, Fabric and Nitro Modules
 
-<br/>
+Every library below started as a problem I hit in a real production app.
+
+---
+
+## 🔥 Featured on X
+
+> Threads and demos from [@TrninhHuy1](https://x.com/TrninhHuy1) that resonated with the React Native community.
+
+<!--
+  HOW TO FILL: replace each TODO with the real post. Get exact numbers from the post's analytics.
+  Keep only your best 2–4 posts. Delete any card you don't use.
+-->
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**🚀 TODO: Post title / hook line**
+
+> "TODO: first sentence of the post"
+
+👁 **TODO** views · ❤️ **TODO** likes · 🔁 **TODO** reposts
+
+[**Read on X →**](https://x.com/TrninhHuy1/status/TODO)
+
+</td>
+<td width="50%" valign="top">
+
+**🚀 TODO: Post title / hook line**
+
+> "TODO: first sentence of the post"
+
+👁 **TODO** views · ❤️ **TODO** likes · 🔁 **TODO** reposts
+
+[**Read on X →**](https://x.com/TrninhHuy1/status/TODO)
+
+</td>
+</tr>
+</table>
+
+---
+
+## 📦 Open-Source Libraries
+
+| Library | What it solves | Links |
+|---|---|---|
+| 🔐 **[react-native-ssl-manager](https://github.com/huytdps13400/react-native-ssl-manager)** | Native SSL certificate pinning for iOS & Android — blocks man-in-the-middle attacks with a one-line setup. | [![npm](https://img.shields.io/npm/v/react-native-ssl-manager?style=flat-square&color=CB3837&label=npm)](https://www.npmjs.com/package/react-native-ssl-manager) [![downloads](https://img.shields.io/npm/dt/react-native-ssl-manager?style=flat-square&color=8B5CF6&label=downloads)](https://www.npmjs.com/package/react-native-ssl-manager) [![stars](https://img.shields.io/github/stars/huytdps13400/react-native-ssl-manager?style=flat-square&color=F59E0B&label=★)](https://github.com/huytdps13400/react-native-ssl-manager) |
+| 🎨 **[react-native-iconify](https://github.com/huytdps13400/react-native-iconify)** | 200,000+ icons for React Native & Web with platform-aware caching. Expo & bare CLI ready. | [![npm](https://img.shields.io/npm/v/@huymobile/react-native-iconify?style=flat-square&color=CB3837&label=npm)](https://www.npmjs.com/package/@huymobile/react-native-iconify) [![downloads](https://img.shields.io/npm/dt/@huymobile/react-native-iconify?style=flat-square&color=8B5CF6&label=downloads)](https://www.npmjs.com/package/@huymobile/react-native-iconify) [![stars](https://img.shields.io/github/stars/huytdps13400/react-native-iconify?style=flat-square&color=F59E0B&label=★)](https://github.com/huytdps13400/react-native-iconify) |
+| 📩 **[react-native-sms-retriever-nitro-module](https://github.com/huytdps13400/react-native-sms-retriever-nitro-module)** | Android SMS Retriever API (OTP auto-fill, no SMS permission) built on Nitro Modules — New & Old Architecture, Expo compatible. | [![npm](https://img.shields.io/npm/v/@huymobile/react-native-sms-retriever-nitro-module?style=flat-square&color=CB3837&label=npm)](https://www.npmjs.com/package/@huymobile/react-native-sms-retriever-nitro-module) [![downloads](https://img.shields.io/npm/dt/@huymobile/react-native-sms-retriever-nitro-module?style=flat-square&color=8B5CF6&label=downloads)](https://www.npmjs.com/package/@huymobile/react-native-sms-retriever-nitro-module) [![stars](https://img.shields.io/github/stars/huytdps13400/react-native-sms-retriever-nitro-module?style=flat-square&color=F59E0B&label=★)](https://github.com/huytdps13400/react-native-sms-retriever-nitro-module) |
+| ☁️ **[supabase-expo-ota-updates](https://github.com/huytdps13400/supabase-expo-ota-upates)** | Self-hosted OTA updates for Expo on Supabase Storage — CLI + config plugin, ship fixes without store review. | [![npm](https://img.shields.io/npm/v/supabase-expo-ota-updates?style=flat-square&color=CB3837&label=npm)](https://www.npmjs.com/package/supabase-expo-ota-updates) [![downloads](https://img.shields.io/npm/dt/supabase-expo-ota-updates?style=flat-square&color=8B5CF6&label=downloads)](https://www.npmjs.com/package/supabase-expo-ota-updates) [![stars](https://img.shields.io/github/stars/huytdps13400/supabase-expo-ota-upates?style=flat-square&color=F59E0B&label=★)](https://github.com/huytdps13400/supabase-expo-ota-upates) |
+| 🌍 **[react-native-country-codes-picker](https://www.npmjs.com/package/@huymobile/react-native-country-codes-picker)** | Country ISO / dial-code picker with search. | [![npm](https://img.shields.io/npm/v/@huymobile/react-native-country-codes-picker?style=flat-square&color=CB3837&label=npm)](https://www.npmjs.com/package/@huymobile/react-native-country-codes-picker) [![downloads](https://img.shields.io/npm/dt/@huymobile/react-native-country-codes-picker?style=flat-square&color=8B5CF6&label=downloads)](https://www.npmjs.com/package/@huymobile/react-native-country-codes-picker) |
+
+---
+
+## 🤝 Open-Source Contributions
+
+<!--
+  HOW TO FILL: list merged PRs to well-known repos (facebook/react-native, expo/expo,
+  software-mansion/*, mrousavy/nitro, etc.). Find them at:
+  https://github.com/pulls?q=is%3Apr+author%3Ahuytdps13400+is%3Amerged+-user%3Ahuytdps13400
+  Keep the 3–6 most impressive. Delete this section if empty.
+-->
+
+| Project | Contribution | PR |
+|---|---|---|
+| **TODO/owner-repo** | TODO: one-line impact (e.g. "Fixed iOS crash when …") | [#TODO](https://github.com/TODO/TODO/pull/TODO) |
+| **TODO/owner-repo** | TODO: one-line impact | [#TODO](https://github.com/TODO/TODO/pull/TODO) |
+
+---
 
 ## 🛠️ Tech Stack
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=js,ts,react,nodejs,express,mongodb,firebase,figma,git,github,androidstudio,apple&theme=dark&perline=6" />
+<img src="https://skillicons.dev/icons?i=ts,js,react,nodejs,firebase,supabase,kotlin,swift,androidstudio,xcode,figma,git&theme=dark&perline=12" />
 
 </div>
 
-<br/>
+| Area | Tools |
+|---|---|
+| **Core** | React Native (New Architecture), Expo, TypeScript, Reanimated, Nitro / TurboModules |
+| **State & Data** | Redux Toolkit, Redux-Saga, TanStack Query |
+| **Security** | SSL Pinning, Biometrics, Keychain / Keystore, Anti-fraud & bot protection |
+| **Payments** | VNPay, ZaloPay, Payoo |
+| **Platform** | Firebase (FCM, Crashlytics), Google Maps SDK, Supabase |
+| **Release** | Fastlane, CodePush / Expo Updates, TestFlight, Play Console |
 
-<table align="center">
-<tr>
-<td valign="top" width="50%">
+---
 
-**⚙️ State & Data**
-![Redux](https://img.shields.io/badge/Redux%20Toolkit-764ABC?style=flat-square&logo=redux&logoColor=white)
-![Saga](https://img.shields.io/badge/Redux--Saga-999999?style=flat-square&logo=redux&logoColor=white)
-![TanStack](https://img.shields.io/badge/TanStack%20Query-FF4154?style=flat-square&logo=reactquery&logoColor=white)
-
-**🧩 Core Integrations**
-![FCM](https://img.shields.io/badge/FCM-FFCA28?style=flat-square&logo=firebase&logoColor=black)
-![Crashlytics](https://img.shields.io/badge/Crashlytics-039BE5?style=flat-square&logo=firebase&logoColor=white)
-![CodePush](https://img.shields.io/badge/CodePush-512BD4?style=flat-square&logo=microsoft&logoColor=white)
-![Maps](https://img.shields.io/badge/Maps%20SDK-4285F4?style=flat-square&logo=googlemaps&logoColor=white)
-![Reanimated](https://img.shields.io/badge/Reanimated-61DAFB?style=flat-square&logo=react&logoColor=black)
-
-</td>
-<td valign="top" width="50%">
-
-**💳 Payments**
-![Payoo](https://img.shields.io/badge/Payoo-00A651?style=flat-square)
-![VNPay](https://img.shields.io/badge/VNPay-0068FF?style=flat-square)
-![ZaloPay](https://img.shields.io/badge/ZaloPay-0068FF?style=flat-square&logo=zalo&logoColor=white)
-
-**🔐 Security**
-![SSL](https://img.shields.io/badge/SSL%20Pinning-3DDC84?style=flat-square&logo=letsencrypt&logoColor=white)
-![Biometrics](https://img.shields.io/badge/Biometrics-000000?style=flat-square&logo=faceid&logoColor=white)
-![Keystore](https://img.shields.io/badge/Keychain%2FKeystore-FFB300?style=flat-square&logo=keycdn&logoColor=white)
-![AntiFraud](https://img.shields.io/badge/Anti--Fraud%2FBot-D32F2F?style=flat-square)
-
-**🚀 Deployment**
-![Fastlane](https://img.shields.io/badge/Fastlane-00CB40?style=flat-square&logo=fastlane&logoColor=white)
-![TestFlight](https://img.shields.io/badge/TestFlight-0D96F6?style=flat-square&logo=testflight&logoColor=white)
-![Play Console](https://img.shields.io/badge/Play%20Console-414141?style=flat-square&logo=googleplay&logoColor=white)
-
-</td>
-</tr>
-</table>
-
-<br/>
-
-## 📦 Open-Source Libraries
-
-<table align="center">
-<tr>
-<td width="50%">
-
-### 🔐 react-native-ssl-manager
-Native SSL Pinning & certificate management for RN apps.
-
-[![npm](https://img.shields.io/npm/v/react-native-ssl-manager?style=for-the-badge&color=CB3837&logo=npm&logoColor=white&label=)](https://www.npmjs.com/package/react-native-ssl-manager)
-[![downloads](https://img.shields.io/npm/dm/react-native-ssl-manager?style=for-the-badge&color=8B5CF6&label=downloads)](https://www.npmjs.com/package/react-native-ssl-manager)
-
-</td>
-<td width="50%">
-
-### 📩 sms-retriever-nitro-module
-Lightweight SMS Retriever API built on TurboModules (Nitro).
-
-[![npm](https://img.shields.io/npm/v/@huymobile/react-native-sms-retriever-nitro-module?style=for-the-badge&color=CB3837&logo=npm&logoColor=white&label=)](https://www.npmjs.com/package/@huymobile/react-native-sms-retriever-nitro-module)
-[![downloads](https://img.shields.io/npm/dm/@huymobile/react-native-sms-retriever-nitro-module?style=for-the-badge&color=8B5CF6&label=downloads)](https://www.npmjs.com/package/@huymobile/react-native-sms-retriever-nitro-module)
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### 🎨 react-native-iconify
-100k+ icons for React Native — Expo & CLI ready.
-
-[![npm](https://img.shields.io/npm/v/@huymobile/react-native-iconify?style=for-the-badge&color=CB3837&logo=npm&logoColor=white&label=)](https://www.npmjs.com/package/@huymobile/react-native-iconify)
-[![downloads](https://img.shields.io/npm/dm/@huymobile/react-native-iconify?style=for-the-badge&color=8B5CF6&label=downloads)](https://www.npmjs.com/package/@huymobile/react-native-iconify)
-
-</td>
-<td width="50%">
-
-### ☁️ supabase-expo-ota-updates
-Self-hosted, instant OTA updates for Expo — no store review wait.
-
-[![npm](https://img.shields.io/npm/v/supabase-expo-ota-updates?style=for-the-badge&color=CB3837&logo=npm&logoColor=white&label=)](https://www.npmjs.com/package/supabase-expo-ota-updates)
-[![downloads](https://img.shields.io/npm/dm/supabase-expo-ota-updates?style=for-the-badge&color=8B5CF6&label=downloads)](https://www.npmjs.com/package/supabase-expo-ota-updates)
-
-</td>
-</tr>
-</table>
-
-<br/>
-
-## 📊 GitHub Analytics
+## 📊 GitHub Activity
 
 <div align="center">
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=huytdps13400&theme=tokyo-night&hide_border=true&bg_color=0D1117&area=true" width="97%" />
+<img src="https://streak-stats.demolab.com?user=huytdps13400&theme=tokyonight&hide_border=true&background=0D1117" height="170" />
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=huytdps13400&theme=tokyo-night&hide_border=true&bg_color=0D1117&area=true" width="100%" />
 
 </div>
 
-<br/>
-
-## 📫 Let's Connect
+---
 
 <div align="center">
 
-<a href="https://www.linkedin.com/in/%C4%91%C3%ACnh-huy-tr%E1%BA%A7n-845963216/">
-  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
-</a>
-<a href="https://twitter.com/TrninhHuy1">
-  <img src="https://img.shields.io/badge/Twitter-000000?style=for-the-badge&logo=x&logoColor=white" />
-</a>
-<a href="https://www.npmjs.com/~huymobile">
-  <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" />
-</a>
-
-<br/><br/>
+**Open to** senior React Native roles, consulting and open-source collaboration.
+<br/>
+💬 The fastest way to reach me is a DM on [X](https://x.com/TrninhHuy1) or [LinkedIn](https://www.linkedin.com/in/%C4%91%C3%ACnh-huy-tr%E1%BA%A7n-845963216/).
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,100:6366F1&height=100&section=footer"/>
 
