@@ -13,14 +13,15 @@ text{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, '
 <clipPath id="cf"><rect x="18" y="0" width="1164" height="480" rx="26"/></clipPath><g clip-path="url(#cf)"><rect x="18" y="0" width="1164" height="480" fill="#0A2540"/><circle cx="66" cy="0" r="480" fill="url(#ga)"/><circle cx="1182" cy="480" r="440" fill="url(#gb)"/></g><rect x="18.75" y="0.75" width="1162.5" height="478.5" rx="25.25" stroke="#1C3A5E" stroke-width="1.5"/>
 <rect x="66" y="44" width="214" height="32" rx="16" fill="#635BFF" fill-opacity=".2" stroke="#635BFF" stroke-opacity=".55"/>
 <text x="82" y="65" font-size="14" font-weight="700" fill="#B9B5FF" letter-spacing="1.6" >FLAGSHIP · SECURITY</text>
-<text x="64" y="142" font-size="40" font-weight="700" fill="#FFFFFF" letter-spacing="-1.2" >react-native-ssl-manager</text>
+
+<text x="64" y="142" font-size="40" font-weight="700" fill="#FFFFFF" letter-spacing="-0.5" >react-native-ssl-manager</text>
 <text x="66" y="188" font-size="19" font-weight="400" fill="#ADBDCC" >Certificate pinning for React Native &amp; Expo. Your</text>
 <text x="66" y="217" font-size="19" font-weight="400" fill="#ADBDCC" >app refuses every connection that doesn't match —</text>
 <text x="66" y="246" font-size="19" font-weight="400" fill="#ADBDCC" >even through Charles, Proxyman or a rogue Wi-Fi.</text>
 <circle cx="76" cy="298" r="10" fill="url(#ok)"/><g transform="translate(69 291) scale(0.5833)" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></g><text x="96" y="304" font-size="17" font-weight="500" fill="#E3E8EE" >TrustKit + OkHttp</text><circle cx="338" cy="298" r="10" fill="url(#ok)"/><g transform="translate(331 291) scale(0.5833)" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></g><text x="358" y="304" font-size="17" font-weight="500" fill="#E3E8EE" >Expo config plugin</text><circle cx="76" cy="336" r="10" fill="url(#ok)"/><g transform="translate(69 329) scale(0.5833)" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></g><text x="96" y="342" font-size="17" font-weight="500" fill="#E3E8EE" >Audit-mode rollout</text><circle cx="338" cy="336" r="10" fill="url(#ok)"/><g transform="translate(331 329) scale(0.5833)" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></g><text x="358" y="342" font-size="17" font-weight="500" fill="#E3E8EE" >Signed OTA pin updates</text>
 <rect x="66" y="390" width="353" height="46" rx="12" fill="#061B31" stroke="#1C3A5E"/>
 <text x="88" y="419" font-size="16" xml:space="preserve" class="mono" ><tspan fill="#3ECF8E">$ </tspan><tspan fill="#FFFFFF">npm i react-native-ssl-manager</tspan></text>
-<text x="437" y="419" font-size="15" font-weight="600" fill="#6B819B" >v2 · Nitro Module</text>
+<text x="437" y="419" font-size="15" font-weight="600" fill="#6B819B" >Nitro · New Arch</text>
 
 <rect x="606" y="44" width="528" height="392" rx="14" fill="#061B31" stroke="#1C3A5E"/>
 <circle cx="628" cy="64" r="6" fill="#FF5F57"/><circle cx="648" cy="64" r="6" fill="#FEBC2E"/><circle cx="668" cy="64" r="6" fill="#28C840"/>

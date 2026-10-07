@@ -1,4 +1,4 @@
-name: Refresh activity card
+name: Refresh live data
 
 on:
   schedule:
@@ -8,6 +8,7 @@ on:
     branches: [master]
     paths:
       - assets/build.py
+      - assets/fetch_stats.py
       - .github/workflows/activity.yml
 
 permissions:
@@ -22,6 +23,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      # Same fonts + Pillow as local builds, so text measurement is identical.
+      - name: Install build dependencies
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq fonts-inter python3-pil
 
       - name: Fetch contribution calendar
         env:
@@ -39,14 +44,19 @@ jobs:
               }
             }' > assets/activity.json
 
-      - name: Render activity card
-        run: python3 assets/build.py activity
+      - name: Fetch npm and GitHub stats
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: /usr/bin/python3 assets/fetch_stats.py
+
+      - name: Render artwork
+        run: /usr/bin/python3 assets/build.py
 
       - name: Commit
         run: |
-          git add assets/activity.json assets/activity.svg
+          git add assets/
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore: refresh activity card"
+          git commit -m "chore: refresh live data"
           git push

@@ -58,6 +58,7 @@ ICONS = {
     "check": '<polyline points="20 6 9 17 4 12"/>',
     "arrow-up": '<line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/>',
     "arrow-up-right": '<line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>',
+    "download": '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>',
 }
 
 # Filled brand marks on a 24px grid (Simple Icons).
@@ -162,6 +163,46 @@ def write(name, w, h, title, body, defs="", css=""):
     (OUT / name).write_text(svg, encoding="utf-8")
 
 
+# Live numbers fetched daily by fetch_stats.py (absent until the first CI run).
+STATS = json.loads((OUT / "stats.json").read_text()) if (OUT / "stats.json").exists() else {}
+
+
+def fmt(n):
+    if n < 1000:
+        return str(n)
+    for div, unit, at in ((1_000_000, "M", 999_500), (1000, "k", 1000)):
+        if n >= at:
+            v = f"{n / div:.1f}"
+            return (v[:-2] if v.endswith(".0") or n >= div * 100 else v) + unit
+
+
+def stat_row(right, y, items, min_x, size=14):
+    """Right-aligned [icon] value pairs ending at `right` on baseline `y`."""
+    out, cur = "", right
+    for ic, val in reversed(items):
+        w = tw(val, size, 600)
+        out += text(round(cur - w, 1), y, val, size, SOFT, 600)
+        cur -= w
+        if ic:
+            cur -= 21
+            out += icon(ic, round(cur, 1), y - 12, 15, MUTED, 2.2)
+        cur -= 16
+    if items and cur + 16 < min_x:
+        raise SystemExit(f"✗ stats row collides with eyebrow ({cur + 16:.0f} < {min_x:.0f})")
+    return out
+
+
+def lib_stats(key):
+    if key == "all":
+        if not STATS:
+            return []
+        total = sum(v.get("downloads", 0) for v in STATS.values())
+        return [("package", str(len(STATS))), ("download", fmt(total))]
+    s = STATS.get(key, {})
+    return ([("star", str(s["stars"]))] if "stars" in s else []) + \
+           ([("download", fmt(s["downloads"]))] if "downloads" in s else [])
+
+
 def card_frame(x, y, w, h, rx, glows=""):
     """Navy card with clipped glows and a hairline border."""
     return (f'<clipPath id="cf"><rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}"/></clipPath>'
@@ -241,7 +282,7 @@ def hero():
         x = L + i * 200
         if i:
             stat_svg += f'<line x1="{x - 28}" y1="480" x2="{x - 28}" y2="550" stroke="{LINE}" stroke-width="1.5"/>'
-        stat_svg += text(x, 516, n, 38, WHITE, 700, spacing=-0.5)
+        stat_svg += text(x, 516, n, 38, WHITE, 700, spacing=-0.3)
         stat_svg += text(x, 543, lbl, 14, "#8FA3B8", 700, spacing=1.1, maxw=170)
 
     eyebrow = "React Native  ·  iOS  ·  Android"
@@ -270,8 +311,8 @@ def hero():
   <circle class="pulse" cx="{L + 22}" cy="213" r="5" fill="{GREEN}"/>
   <circle cx="{L + 22}" cy="213" r="5" fill="{GREEN}"/>
   {text(L + 38, 218, eyebrow, 15, SOFT, 600, extra='xml:space="preserve"')}
-  {text(L - 3, 304, "Trần Đình Huy", 68, WHITE, 700, spacing=-1.8, maxw=480)}
-  {text(L, 354, "Senior React Native Engineer", 31, "url(#title)", 600, spacing=-0.4, maxw=480)}
+  {text(L - 3, 304, "Trần Đình Huy", 68, WHITE, 700, spacing=-1.0, maxw=480)}
+  {text(L, 354, "Senior React Native Engineer", 31, "url(#title)", 600, spacing=-0.2, maxw=480)}
   {text(L, 403, "I build secure, production-grade mobile apps —", 21, MUTED, maxw=488)}
   {text(L, 434, "and open-source the infrastructure behind them.", 21, MUTED, maxw=488)}
   {stat_svg}
@@ -362,7 +403,7 @@ def header(name, eyebrow, title, sub):
     css = (f".h{{fill:{INK}}}.s{{fill:{INK_MUTED}}}"
            f"@media (prefers-color-scheme: dark){{.h{{fill:#F6F9FC}}.s{{fill:{MUTED}}}}}")
     body = (text(18, 38, eyebrow, 15, "url(#eb)", 800, spacing=2.4)
-            + text(16, 98, title, 46, "", 700, cls="h", spacing=-1.4, maxw=1164)
+            + text(16, 98, title, 46, "", 700, cls="h", spacing=-0.6, maxw=1164)
             + text(18, 140, sub, 20, "", 400, cls="s", maxw=1164))
     write(name, 1200, 160, f"{title} {sub}", body, lin("eb", BLURPLE, "#00B8E6"), css)
 
@@ -399,7 +440,7 @@ def expertise():
                  f'<rect x="{x + .75}" y="{y + .75}" width="{tw_ - 1.5}" height="{th - 1.5}" rx="21.25" stroke="{LINE}" stroke-width="1.5"/>'
                  f'<rect x="{x + 36}" y="{y + 36}" width="56" height="56" rx="15" fill="url(#g{i})"/>'
                  + icon(ic, x + 50, y + 50, 28, WHITE, 2.1)
-                 + text(x + 35, y + 140, title, 28, WHITE, 700, spacing=-0.6, maxw=inner - x)
+                 + text(x + 35, y + 140, title, 28, WHITE, 700, spacing=-0.3, maxw=inner - x)
                  + text(x + 36, y + 177, desc[0], 19, MUTED, maxw=inner - x - 36)
                  + text(x + 36, y + 205, desc[1], 19, MUTED, maxw=inner - x - 36))
         chx = x + 36
@@ -460,14 +501,15 @@ def flagship():
 {card_frame(18, 0, 1164, 480, 26, '<circle cx="66" cy="0" r="480" fill="url(#ga)"/><circle cx="1182" cy="480" r="440" fill="url(#gb)"/>')}
 <rect x="{L}" y="44" width="{round(tw(eyebrow, 14, 700, 1.6) + 32)}" height="32" rx="16" fill="{BLURPLE}" fill-opacity=".2" stroke="{BLURPLE}" stroke-opacity=".55"/>
 {text(L + 16, 65, eyebrow, 14, LAVENDER, 700, spacing=1.6)}
-{text(L - 2, 142, "react-native-ssl-manager", 40, WHITE, 700, spacing=-1.2, maxw=wx - L - 30)}
+{stat_row(wx - 40, 65, ([(None, "v" + STATS["ssl"]["version"])] if "version" in STATS.get("ssl", {}) else []) + lib_stats("ssl"), L + tw(eyebrow, 14, 700, 1.6) + 48)}
+{text(L - 2, 142, "react-native-ssl-manager", 40, WHITE, 700, spacing=-0.5, maxw=wx - L - 30)}
 {text(L, 188, "Certificate pinning for React Native & Expo. Your", 19, MUTED, maxw=wx - L - 40)}
 {text(L, 217, "app refuses every connection that doesn't match —", 19, MUTED, maxw=wx - L - 40)}
 {text(L, 246, "even through Charles, Proxyman or a rogue Wi-Fi.", 19, MUTED, maxw=wx - L - 40)}
 {feat_svg}
 <rect x="{L}" y="390" width="{cmd_w}" height="46" rx="12" fill="{DEEP}" stroke="{LINE}"/>
 {code_line(L + 22, 419, [("$ ", "prompt"), (cmd, "cmd")], 16)}
-{text(L + cmd_w + 18, 419, "v2 · Nitro Module", 15, SUBTLE, 600, maxw=wx - L - cmd_w - 40)}
+{text(L + cmd_w + 18, 419, "Nitro · New Arch", 15, SUBTLE, 600, maxw=wx - L - cmd_w - 40)}
 
 <rect x="{wx}" y="{wy}" width="{ww}" height="{wh}" rx="14" fill="{DEEP}" stroke="{LINE}"/>
 <circle cx="{wx + 22}" cy="{wy + 20}" r="6" fill="#FF5F57"/><circle cx="{wx + 42}" cy="{wy + 20}" r="6" fill="#FEBC2E"/><circle cx="{wx + 62}" cy="{wy + 20}" r="6" fill="#28C840"/>
@@ -497,11 +539,11 @@ def art_otp():
     for i, d in enumerate("482916"):
         x = 296 + i * 44
         out += (f'<rect x="{x}" y="40" width="36" height="48" rx="10" fill="#FFFFFF" fill-opacity=".06" stroke="#FFFFFF" stroke-opacity=".14"/>'
-                f'<rect class="hl" x="{x}" y="40" width="36" height="48" rx="10" stroke="{GREEN}" stroke-width="1.5" style="animation-delay:{i * .15:.2f}s"/>'
-                + text(x + 18, 72, d, 22, WHITE, 700, anchor="middle", extra=f'class="dg" style="animation-delay:{i * .15:.2f}s"'))
-    css = (".dg,.hl{animation:dg 6s ease-out infinite both}"
-           "@keyframes dg{0%,6%{opacity:0}12%,86%{opacity:1}94%,100%{opacity:0}}"
-           ".hl{animation-name:hl}@keyframes hl{0%,6%{opacity:0}10%{opacity:1}22%,100%{opacity:0}}")
+                f'<rect class="hl" x="{x}" y="40" width="36" height="48" rx="10" stroke="{GREEN}" stroke-width="1.5" style="animation-delay:{i * .12:.2f}s"/>'
+                + text(x + 18, 72, d, 22, WHITE, 700, anchor="middle", extra=f'class="dg" style="animation-delay:{i * .12:.2f}s"'))
+    css = (".dg,.hl{animation:dg 8s ease-out infinite both}"
+           "@keyframes dg{0%,3%{opacity:0}7%,95%{opacity:1}99%,100%{opacity:0}}"
+           ".hl{animation-name:hl}@keyframes hl{0%,3%{opacity:0}6%{opacity:1}14%,100%{opacity:0}}")
     return out, css
 
 
@@ -532,21 +574,21 @@ LIBS = [
     ("lib-iconify.svg", "grid", MAGENTA, ORANGE, "#FFC1F7", "ICONS · iOS · ANDROID · WEB", "react-native-iconify",
      ["200,000+ icons from 150+ sets, loaded by name.", "Native caching via SDWebImage & Glide."],
      [("<", "p"), ("IconifyIcon", "tag"), (" name", "attr"), ("=", "p"), ('"mdi:rocket-launch"', "str"),
-      (" size", "attr"), ("={", "p"), ("32", "num"), ("} />", "p")], art_icons),
+      (" size", "attr"), ("={", "p"), ("32", "num"), ("} />", "p")], art_icons, "iconify"),
     ("lib-sms-retriever.svg", "message", GREEN, CYAN, "#9FF0CB", "OTP · ANDROID · NITRO", "sms-retriever-nitro-module",
      ["One-tap OTP autofill on Android, zero SMS", "permissions. Nitro + TurboModules, Expo-ready."],
-     [("const", "kw"), (" { smsCode } = ", "p"), ("useSMSRetriever", "fn"), ("({ onSuccess })", "p")], art_otp),
+     [("const", "kw"), (" { smsCode } = ", "p"), ("useSMSRetriever", "fn"), ("({ onSuccess })", "p")], art_otp, "sms"),
     ("lib-ota-updates.svg", "cloud", GREEN, BLURPLE, "#9FF0CB", "OTA · EXPO · SUPABASE", "supabase-expo-ota-updates",
      ["Self-hosted OTA updates for Expo on Supabase.", "Staged rollouts and auto-rollback on crash."],
      [("$ ", "prompt"), ("npx supabase-expo-ota-updates publish", "cmd"), (" --rollout", "flag"), (" 50", "num")],
-     art_rollout),
+     art_rollout, "ota"),
     ("lib-more.svg", "package", BLURPLE, CYAN, LAVENDER, "ALL PACKAGES", "More on npm",
      ["Also maintaining a multilingual country-code", "picker with search & Reanimated v3 support."],
-     [("$ ", "prompt"), ("npm search", "cmd"), (" maintainer:huymobile", "str")], art_packages),
+     [("$ ", "prompt"), ("npm search", "cmd"), (" maintainer:huymobile", "str")], art_packages, "all"),
 ]
 
 
-def lib_card(fname, ic, a, b, eye_c, eyebrow, title, desc, code, art):
+def lib_card(fname, ic, a, b, eye_c, eyebrow, title, desc, code, art, key):
     W, ch, H = 600, 360, 376
     art_svg, art_css = art()
     defs = lin("g", a, b, x2=1, y2=1) + lin("bar", GREEN, CYAN) + glow("r", a, .34)
@@ -556,7 +598,8 @@ def lib_card(fname, ic, a, b, eye_c, eyebrow, title, desc, code, art):
 {icon(ic, 62, 50, 28, WHITE, 2.1)}
 {art_svg}
 {text(48, 140, eyebrow, 14, eye_c, 700, spacing=1.5, maxw=504)}
-{text(47, 180, title, 30, WHITE, 700, spacing=-0.7, maxw=504)}
+{stat_row(552, 140, lib_stats(key), 48 + tw(eyebrow, 14, 700, 1.5))}
+{text(47, 180, title, 30, WHITE, 700, spacing=-0.3, maxw=504)}
 {text(48, 218, desc[0], 19, MUTED, maxw=504)}
 {text(48, 246, desc[1], 19, MUTED, maxw=504)}
 <rect x="48" y="272" width="504" height="52" rx="12" fill="{DEEP}" stroke="{LINE}"/>
@@ -574,7 +617,7 @@ def x_card():
 {card_frame(18, 0, 1164, 260, 26, '<circle cx="1060" cy="40" r="360" fill="url(#gb)"/><circle cx="760" cy="300" r="300" fill="url(#ga)"/>')}
 <circle cx="122" cy="130" r="56" fill="#000000" stroke="#FFFFFF" stroke-opacity=".18" stroke-width="1.5"/>
 {brand("x", 100, 108, 44)}
-{text(210, 114, "@TrninhHuy1", 40, WHITE, 700, spacing=-1.2)}
+{text(210, 114, "@TrninhHuy1", 40, WHITE, 700, spacing=-0.5)}
 {text(212, 153, "React Native deep-dives, library launches and lessons", 19, MUTED, maxw=bx - 236)}
 {text(212, 181, "from shipping secure mobile apps to production.", 19, MUTED, maxw=bx - 236)}
 <rect x="{bx}" y="102" width="{bw}" height="56" rx="28" fill="#FFFFFF"/>
@@ -602,7 +645,7 @@ def footer():
 </g>
 <rect x="18.5" y=".5" width="1163" height="287" rx="27.5" stroke="#FFFFFF" stroke-opacity=".08"/>
 {text(66, 64, "LET'S TALK", 15, "url(#eb)", 800, spacing=2.4)}
-{text(64, 118, "Let's build something people trust.", 46, WHITE, 700, spacing=-1.4, maxw=bx - 100)}
+{text(64, 118, "Let's build something people trust.", 46, WHITE, 700, spacing=-0.6, maxw=bx - 100)}
 {text(66, 158, "Open to senior React Native roles, consulting and open-source collaboration.", 20, MUTED, maxw=1068)}
 <rect x="{bx}" y="72" width="{bw}" height="56" rx="28" fill="#FFFFFF"/>
 {brand("x", bx + 32, 90, 20, INK)}
@@ -672,7 +715,7 @@ def activity():
         x = L + i * 270
         if i:
             stat_svg += f'<line x1="{x - 30}" y1="68" x2="{x - 30}" y2="136" stroke="{LINE}" stroke-width="1.5"/>'
-        stat_svg += (f'<text x="{x}" y="102" font-size="42" font-weight="700" fill="{WHITE}" letter-spacing="-1">{escape(n)}'
+        stat_svg += (f'<text x="{x}" y="102" font-size="42" font-weight="700" fill="{WHITE}" letter-spacing="-0.4">{escape(n)}'
                      f'<tspan font-size="20" font-weight="600" fill="{MUTED}" letter-spacing="0">{escape(unit)}</tspan></text>'
                      + text(x, 130, lbl, 15, MUTED, 500, maxw=236))
 

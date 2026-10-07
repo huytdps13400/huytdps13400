@@ -28,12 +28,6 @@
   <a href="https://github.com/huytdps13400/supabase-expo-ota-upates"><img src="./assets/lib-ota-updates.svg" width="49.5%" alt="supabase-expo-ota-updates — self-hosted OTA updates for Expo on Supabase" /></a><a href="https://www.npmjs.com/~huymobile"><img src="./assets/lib-more.svg" width="49.5%" alt="More packages on npm" /></a>
 </p>
 
-<p align="center">
-  <a href="https://www.npmjs.com/package/react-native-ssl-manager"><img src="https://img.shields.io/npm/dt/react-native-ssl-manager?style=flat-square&label=ssl-manager&labelColor=0A2540&color=635BFF" alt="react-native-ssl-manager downloads" /></a>
-  <a href="https://www.npmjs.com/package/@huymobile/react-native-iconify"><img src="https://img.shields.io/npm/dt/@huymobile/react-native-iconify?style=flat-square&label=iconify&labelColor=0A2540&color=F96BEE" alt="react-native-iconify downloads" /></a>
-  <a href="https://www.npmjs.com/package/@huymobile/react-native-sms-retriever-nitro-module"><img src="https://img.shields.io/npm/dt/@huymobile/react-native-sms-retriever-nitro-module?style=flat-square&label=sms-retriever&labelColor=0A2540&color=3ECF8E" alt="sms-retriever-nitro-module downloads" /></a>
-  <a href="https://www.npmjs.com/package/supabase-expo-ota-updates"><img src="https://img.shields.io/npm/dt/supabase-expo-ota-updates?style=flat-square&label=ota-updates&labelColor=0A2540&color=00D4FF" alt="supabase-expo-ota-updates downloads" /></a>
-</p>
 
 <!-- CONTRIBUTIONS (uncomment once filled with merged upstream PRs):
 <br />
