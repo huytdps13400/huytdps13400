@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="Let's build something people trust. Open to senior React Native roles, consulting and open-source collaboration." fill="none">
 <title>Let's build something people trust. Open to senior React Native roles, consulting and open-source collaboration.</title>
-<defs><filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="60"/></filter><pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" stroke="#FFFFFF" stroke-opacity=".07"/></pattern><linearGradient id="eb" x1="0" y1="0" x2="1" y2="0"><stop offset="0.00" stop-color="#C3BEFF"/><stop offset="1.00" stop-color="#80E9FF"/></linearGradient><clipPath id="card"><rect x="12" width="1176" height="288" rx="28"/></clipPath><clipPath id="band2"><polygon points="12,168 1188,168 1188,30 12,130"/></clipPath><style>
+<defs><filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="60"/></filter><pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" stroke="#FFFFFF" stroke-opacity=".07"/></pattern><filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .55"/></feComponentTransfer></filter><linearGradient id="eb" x1="0" y1="0" x2="1" y2="0"><stop offset="0.00" stop-color="#C3BEFF"/><stop offset="1.00" stop-color="#80E9FF"/></linearGradient><clipPath id="card"><rect x="12" width="1176" height="288" rx="28"/></clipPath><clipPath id="band2"><polygon points="12,168 1188,168 1188,30 12,130"/></clipPath><style>
 text{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif}
 .mono{font-family:ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace}
 @media (prefers-reduced-motion: reduce){*{animation:none!important}}
@@ -23,10 +23,11 @@ text{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, '
     <circle class="b2" cx="660" cy="330" r="190" fill="#7A73FF"/>
   </g>
   <rect width="1200" height="600" fill="url(#grid)"/>
+  <rect width="1200" height="600" filter="url(#grain)" opacity=".35" style="mix-blend-mode:overlay"/>
 </g></g>
 </g>
 <rect x="12.5" y=".5" width="1175" height="287" rx="27.5" stroke="#FFFFFF" stroke-opacity=".08"/>
-<text x="60" y="66" font-size="14" font-weight="800" fill="url(#eb)" letter-spacing="2.4" >LET'S TALK</text>
-<text x="58" y="118" font-size="42" font-weight="700" fill="#FFFFFF" letter-spacing="-1.2" >Let's build something people trust.</text>
-<text x="60" y="156" font-size="18" font-weight="400" fill="#ADBDCC" >Open to senior React Native roles, consulting and open-source collaboration.</text>
+<text x="60" y="64" font-size="15" font-weight="800" fill="url(#eb)" letter-spacing="2.4" >LET'S TALK</text>
+<text x="58" y="118" font-size="46" font-weight="700" fill="#FFFFFF" letter-spacing="-1.4" >Let's build something people trust.</text>
+<text x="60" y="158" font-size="20" font-weight="400" fill="#ADBDCC" >Open to senior React Native roles, consulting and open-source collaboration.</text>
 </svg>

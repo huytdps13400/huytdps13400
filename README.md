@@ -63,12 +63,7 @@
 
 <img src="./assets/h-activity.svg" width="100%" alt="04 — Activity. Shipping, consistently." />
 
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=huytdps13400&hide_border=true&border_radius=22&background=0A2540&stroke=1C3A5E&ring=635BFF&fire=00D4FF&currStreakNum=FFFFFF&sideNums=FFFFFF&currStreakLabel=80E9FF&sideLabels=ADBDCC&dates=6B819B" width="98%" alt="GitHub contribution streak" />
-</p>
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=huytdps13400&bg_color=0A2540&color=ADBDCC&title_color=FFFFFF&line=635BFF&point=00D4FF&area=true&area_color=635BFF&hide_border=true&radius=22" width="98%" alt="GitHub contribution graph" />
-</p>
+<img src="./assets/activity.svg" width="100%" alt="GitHub activity — contributions over the last year, current and longest streak" />
 
 <br />
 
