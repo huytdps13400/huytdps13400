@@ -33,39 +33,13 @@ Every library below started as a problem I hit in a real production app.
 
 ## 🔥 Featured on X
 
-> Threads and demos from [@TrninhHuy1](https://x.com/TrninhHuy1) that resonated with the React Native community.
+> I share React Native deep-dives, library launches and production lessons on X — **[follow @TrninhHuy1](https://x.com/TrninhHuy1)**.
 
-<!--
-  HOW TO FILL: replace each TODO with the real post. Get exact numbers from the post's analytics.
-  Keep only your best 2–4 posts. Delete any card you don't use.
+<!-- FEATURED POSTS TEMPLATE (uncomment and fill with real numbers):
+| Post | Reach |
+|---|---|
+| **[Post hook line](https://x.com/TrninhHuy1/status/ID)** | 👁 N views · ❤️ N likes · 🔁 N reposts |
 -->
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-**🚀 TODO: Post title / hook line**
-
-> "TODO: first sentence of the post"
-
-👁 **TODO** views · ❤️ **TODO** likes · 🔁 **TODO** reposts
-
-[**Read on X →**](https://x.com/TrninhHuy1/status/TODO)
-
-</td>
-<td width="50%" valign="top">
-
-**🚀 TODO: Post title / hook line**
-
-> "TODO: first sentence of the post"
-
-👁 **TODO** views · ❤️ **TODO** likes · 🔁 **TODO** reposts
-
-[**Read on X →**](https://x.com/TrninhHuy1/status/TODO)
-
-</td>
-</tr>
-</table>
 
 ---
 
@@ -81,21 +55,14 @@ Every library below started as a problem I hit in a real production app.
 
 ---
 
+<!-- CONTRIBUTIONS TEMPLATE (uncomment and fill with merged upstream PRs):
 ## 🤝 Open-Source Contributions
-
-<!--
-  HOW TO FILL: list merged PRs to well-known repos (facebook/react-native, expo/expo,
-  software-mansion/*, mrousavy/nitro, etc.). Find them at:
-  https://github.com/pulls?q=is%3Apr+author%3Ahuytdps13400+is%3Amerged+-user%3Ahuytdps13400
-  Keep the 3–6 most impressive. Delete this section if empty.
--->
 
 | Project | Contribution | PR |
 |---|---|---|
-| **TODO/owner-repo** | TODO: one-line impact (e.g. "Fixed iOS crash when …") | [#TODO](https://github.com/TODO/TODO/pull/TODO) |
-| **TODO/owner-repo** | TODO: one-line impact | [#TODO](https://github.com/TODO/TODO/pull/TODO) |
+| **owner/repo** | One-line impact | [#123](https://github.com/owner/repo/pull/123) |
 
----
+-->
 
 ## 🛠️ Tech Stack
 
