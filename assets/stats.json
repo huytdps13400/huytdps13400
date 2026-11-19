@@ -1,26 +1,26 @@
 {
   "country": {
-    "downloads": 784,
+    "downloads": 800,
     "stars": 0,
     "version": "1.0.4"
   },
   "iconify": {
-    "downloads": 17438,
+    "downloads": 20960,
     "stars": 14,
     "version": "1.1.0"
   },
   "ota": {
-    "downloads": 780,
+    "downloads": 835,
     "stars": 11,
     "version": "0.3.0"
   },
   "sms": {
-    "downloads": 2251,
-    "stars": 62,
+    "downloads": 2372,
+    "stars": 63,
     "version": "1.1.0"
   },
   "ssl": {
-    "downloads": 10267,
+    "downloads": 11076,
     "stars": 37,
     "version": "2.2.0"
   }
